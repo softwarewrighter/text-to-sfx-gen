@@ -29,33 +29,32 @@ class SoundTrainer:
         t = np.linspace(0, base_params['duration'], int(self.sample_rate * base_params['duration']), False)
         files = []
         
+        # Generate dramatic variations for each attempt
         for attempt_num in range(1, num_attempts + 1):
-            # Vary parameters for each attempt
+            # Create diverse parameters for each attempt
             params = base_params.copy()
             
-            # Systematic variation for each attempt
             if attempt_num == 1:
-                # Base params
+                # Base parameters - unchanged
                 pass
             elif attempt_num == 2:
-                # Higher frequency
-                for key, value in base_params.items():
+                # Attempt 2: Shorter duration, higher frequency
+                params['duration'] = max(1.0, base_params['duration'] * 0.7)
+                for key, value in params.items():
                     if isinstance(value, (int, float)) and 'freq' in key:
-                        params[key] = value * 1.15  # +15%
-                    elif 'cutoff' in key:
-                        params[key] = value * 1.2  # +20%
+                        params[key] = value * 1.3  # +30% higher
             elif attempt_num == 3:
-                # Lower frequency, more filtering
-                for key, value in base_params.items():
+                # Attempt 3: Longer duration, lower frequency
+                params['duration'] = base_params['duration'] * 1.3
+                for key, value in params.items():
                     if isinstance(value, (int, float)) and 'freq' in key:
-                        params[key] = value * 0.85  # -15%
-                    elif 'cutoff' in key:
-                        params[key] = value * 0.8  # -20%
-            else:  # attempt_num == 4
-                # Mix of approaches
-                for key, value in base_params.items():
-                    if isinstance(value, (int, float)):
-                        params[key] = value * (1.0 + (np.random.random() - 0.5) * 0.3)  # ±15% random
+                        params[key] = value * 0.7  # -30% lower
+            elif attempt_num == 4:
+                # Attempt 4: Mixed dramatic changes
+                params['duration'] = max(1.0, base_params['duration'] * 0.8)  # Different duration
+                for key, value in params.items():
+                    if isinstance(value, (int, float)) and 'freq' in key:
+                        params[key] = value * (0.5 + np.random.random() * 1.0)  # ±50% random
             
             # Generate sound
             signal = generator_func(t, params, self.sample_rate)
@@ -95,7 +94,7 @@ class SoundTrainer:
         print(f"{'='*60}")
         
         for i, (file_path, desc) in enumerate(zip(files, descriptions)):
-            print(f"\n[{i}/{len(files)}] {desc}")
+            print(f"\n[{i+1}/{len(files)}] {desc}")
             print(f"   File: {file_path}")
             print("   Playing now...\n")
             
@@ -108,20 +107,20 @@ class SoundTrainer:
     
     def get_user_choice(self, files: list, descriptions: list) -> int:
         """
-        Get user's choice from the batch.
+        Get user's choice from a batch.
         """
         print("\n" + "="*60)
         print("Which version sounds best?")
         print("="*60)
         
-        for i, desc in enumerate(descriptions, 1):
-            print(f"[{i-1}] {desc}")
+        for i, desc in enumerate(descriptions):
+            print(f"[{i}] {desc}")
         
         print("[r] Regenerate batch with parameter tweaks")
         print("[q] Quit\n")
         
         while True:
-            choice = input("\nEnter choice (1-4, r, or q): ").strip().lower()
+            choice = input("Enter choice (0-{}, r, or q): ".format(len(files)-1)).strip().lower()
             
             if choice == 'q':
                 return -1  # Quit signal
@@ -129,10 +128,10 @@ class SoundTrainer:
             if choice == 'r':
                 return 0  # Regenerate signal
             
-            if choice in ['1', '2', '3', '4']:
+            try:
                 return int(choice)
-            
-            print("Please enter 1, 2, 3, 4, r, or q")
+            except ValueError:
+                print("Please enter a valid number")
     
     def apply_tweaks(self, base_params: dict) -> dict:
         """
@@ -151,6 +150,8 @@ class SoundTrainer:
                     prompt = f"{key} (Hz, current: {value:.1f}): "
                 elif 'duration' in key:
                     prompt = f"{key} (seconds, current: {value:.1f}): "
+                elif 'cutoff' in key:
+                    prompt = f"{key} (Hz, current: {value:.1f}): "
                 else:
                     continue  # Skip non-numeric params
                 
@@ -162,7 +163,7 @@ class SoundTrainer:
                             tweaked_params[key] = new_value
                             print(f"  ✓ Set {key} to {new_value:.1f}")
                     except ValueError:
-                        print(f"  Invalid value, keeping {value}")
+                        print(f"   Invalid value, keeping {value}")
         
         return tweaked_params
     
@@ -180,7 +181,7 @@ class SoundTrainer:
         print(f"🎯 Training: {sound_name}")
         print(f"{'='*60}")
         
-        # Descriptions for the 4 systematic attempts
+        # Descriptions for 4 systematic attempts
         descriptions = [
             "Base parameters",
             "Higher frequency & cutoff",
@@ -197,7 +198,7 @@ class SoundTrainer:
             descriptions = [
                 "Base parameters",
                 "Higher frequency & cutoff",
-                "Lower frequency & cutoff", 
+                "Lower frequency & cutoff",
                 "Mixed variation"
             ]
             self.play_batch(files, descriptions)
@@ -208,31 +209,25 @@ class SoundTrainer:
             print(f"{'='*60}")
             
             if choice == -1:
-                # User chose to quit
+                # User wants to quit
                 print("\n👋 Training stopped")
-                return base_params
+                break
             
             elif choice == 0:
-                # User wants to regenerate with parameter tweaks
-                print("\n🔄 Regenerating with your tweaks...")
-                base_params = self.apply_tweaks(base_params)
-            
-            else:
-                # User selected a specific attempt (1-4)
-                selected_file = files[choice - 1]
-                selected_desc = descriptions[choice - 1]
+                # User selected an attempt
+                selected_file = files[choice]
+                selected_desc = descriptions[choice]
                 
                 print(f"\n✅ Selected: {selected_desc}")
                 print(f"💾 Saving final version...")
                 
                 # Save as final
                 final_file = os.path.join(self.attempts_dir, f"{sound_name.replace(' ', '_')}_final.wav")
-                import shutil
                 shutil.copy2(selected_file, final_file)
                 
                 print(f"✅ Saved final: {final_file}")
                 
-                # Copy the final to project root
+                # Copy to project root
                 project_root_final = os.path.join("..", f"{sound_name.replace(' ', '_')}_final.wav")
                 shutil.copy2(selected_file, project_root_final)
                 
@@ -244,7 +239,15 @@ class SoundTrainer:
                     if isinstance(value, (int, float)):
                         print(f"   {key}: {value}")
                 
-                return base_params
+                break
+            
+            else:
+                # User wants to regenerate with parameter tweaks
+                print("\n🔄 Regenerating with your tweaks...")
+                base_params = self.apply_tweaks(base_params)
+        
+        print(f"\n✨ Training complete for: {sound_name}")
+        return base_params
 
 
 # Sound generator functions
@@ -395,7 +398,7 @@ def generate_gravel_footsteps(t, params, sample_rate):
         # Decay - create proper decay for step
         decay_samples = step_samples - attack_samples
         if decay_samples > 0:
-            decay_curve = np.exp(-6 * np.linspace(0, 1, decay_samples))
+            decay_curve = np.exp(-6 * t[attack_samples:] / (step_duration - attack_samples))
             envelope[attack_samples:] = decay_curve
         
         gravel = gravel * envelope
@@ -443,13 +446,13 @@ def main():
     print("="*60)
     print("🎵 Interactive SFX Trainer")
     print("="*60)
-    print("This app generates multiple attempts at creating a sound effect,")
+    print("This app generates 4 attempts upfront,")
     print("then lets you pick the best version. Analogous to human training.")
     print("\nAvailable sound effects:")
-    print("  [1] Door creak")
-    print("  [2] Siren (US wail)")
-    print("  [3] Gravel footsteps")
-    print("  [q] Quit")
+    print(" [1] Door creak")
+    print(" [2] Siren (US wail)")
+    print(" [3] Gravel footsteps")
+    print(" [q] Quit")
     print("="*60)
     
     while True:
@@ -461,68 +464,47 @@ def main():
         
         if choice == '1':
             # Door creak training
-            attempt1 = {
+            base_params = {
                 'duration': 5.0,
                 'base_freq': 400,
                 'cutoff': 2500
-            }
-            attempt2 = {
-                'duration': 5.0,
-                'base_freq': 350,
-                'cutoff': 2000
             }
             
             trainer.train_sound(
                 "Door creak",
                 generate_door_creak,
-                attempt1,
-                attempt2
+                base_params
             )
         
         elif choice == '2':
             # Siren training
-            attempt1 = {
+            base_params = {
                 'duration': 5.0,
                 'base_low': 800,
                 'base_high': 1200,
                 'wail_speed': 2.5,
                 'cutoff': 4000
             }
-            attempt2 = {
-                'duration': 5.0,
-                'base_low': 600,
-                'base_high': 900,
-                'wail_speed': 3.5,
-                'cutoff': 6000
-            }
             
             trainer.train_sound(
                 "Siren (US wail)",
                 generate_siren_wail,
-                attempt1,
-                attempt2
+                base_params
             )
         
         elif choice == '3':
             # Gravel footsteps training
-            attempt1 = {
+            base_params = {
                 'duration': 6.0,
                 'steps_per_second': 2.0,
                 'step_duration': 0.2,
                 'cutoff': 1500
             }
-            attempt2 = {
-                'duration': 6.0,
-                'steps_per_second': 2.0,
-                'step_duration': 0.15,
-                'cutoff': 2500
-            }
             
             trainer.train_sound(
                 "Gravel footsteps",
                 generate_gravel_footsteps,
-                attempt1,
-                attempt2
+                base_params
             )
         
         else:
