@@ -4,14 +4,11 @@ import wave
 import struct
 import os
 import subprocess
-import shutil
 from typing import Callable
 
 class SoundTrainer:
     """
-    Interactive SFX trainer - generates batch of 4 attempts upfront.
-    User picks best from pre-generated options.
-    Analogous to human training: iterate with feedback until satisfied.
+    Interactive SFX trainer - generates sound, asks questions, refines based on answers.
     """
     
     def __init__(self):
@@ -20,234 +17,137 @@ class SoundTrainer:
         self.attempts_dir = "attempts"
         os.makedirs(self.attempts_dir, exist_ok=True)
     
-    def generate_batch(self, generator_func: Callable, num_attempts: int = 4, base_params: dict = None) -> list:
-        """
-        Generate a batch of sound attempts at once.
+    def generate_sound(self, generator_func: Callable, params: dict, attempt_num: int) -> str:
+        """Generate a single attempt WAV file."""
+        t = np.linspace(0, params['duration'], int(self.sample_rate * params['duration']), False)
         
-        Returns list of file paths for generated attempts.
-        """
-        t = np.linspace(0, base_params['duration'], int(self.sample_rate * base_params['duration']), False)
-        files = []
+        signal = generator_func(t, params, self.sample_rate)
         
-        # Generate dramatic variations for each attempt
-        for attempt_num in range(1, num_attempts + 1):
-            # Create diverse parameters for each attempt
-            params = base_params.copy()
-            
-            if attempt_num == 1:
-                # Base parameters - unchanged
-                pass
-            elif attempt_num == 2:
-                # Attempt 2: Shorter duration, higher frequency
-                params['duration'] = max(1.0, base_params['duration'] * 0.7)
-                for key, value in params.items():
-                    if isinstance(value, (int, float)) and 'freq' in key:
-                        params[key] = value * 1.3  # +30% higher
-            elif attempt_num == 3:
-                # Attempt 3: Longer duration, lower frequency
-                params['duration'] = base_params['duration'] * 1.3
-                for key, value in params.items():
-                    if isinstance(value, (int, float)) and 'freq' in key:
-                        params[key] = value * 0.7  # -30% lower
-            elif attempt_num == 4:
-                # Attempt 4: Mixed dramatic changes
-                params['duration'] = max(1.0, base_params['duration'] * 0.8)  # Different duration
-                for key, value in params.items():
-                    if isinstance(value, (int, float)) and 'freq' in key:
-                        params[key] = value * (0.5 + np.random.random() * 1.0)  # ±50% random
-            
-            # Generate sound
-            signal = generator_func(t, params, self.sample_rate)
-            
-            # Normalize and apply volume
-            signal = signal / np.max(np.abs(signal)) * self.volume
-            
-            # Low-pass filter for smoothness
-            lp_filter_size = int(self.sample_rate / params.get('cutoff', 3000))
-            signal = np.convolve(signal, np.ones(lp_filter_size)/lp_filter_size, mode='same')
-            
-            # Normalize after filtering
-            signal = signal / np.max(np.abs(signal)) * self.volume
-            
-            # Convert to 16-bit PCM
-            samples = (signal * 32767).astype(np.int16)
-            
-            # Create stereo
-            output_file = os.path.join(self.attempts_dir, f"attempt_{attempt_num:02d}.wav")
-            with wave.open(output_file, 'w') as wav_file:
-                wav_file.setnchannels(2)
-                wav_file.setsampwidth(2)
-                wav_file.setframerate(self.sample_rate)
-                for sample in samples:
-                    wav_file.writeframes(struct.pack('<hh', sample, sample))
-            
-            files.append(output_file)
+        # Normalize and apply volume
+        signal = signal / np.max(np.abs(signal)) * self.volume
         
-        return files
+        # Low-pass filter for smoothness
+        lp_filter_size = int(self.sample_rate / params.get('cutoff', 3000))
+        signal = np.convolve(signal, np.ones(lp_filter_size)/lp_filter_size, mode='same')
+        
+        # Normalize after filtering
+        signal = signal / np.max(np.abs(signal)) * self.volume
+        
+        # Convert to 16-bit PCM
+        samples = (signal * 32767).astype(np.int16)
+        
+        # Create stereo
+        output_file = os.path.join(self.attempts_dir, f"attempt_{attempt_num:02d}.wav")
+        with wave.open(output_file, 'w') as wav_file:
+            wav_file.setnchannels(2)
+            wav_file.setsampwidth(2)
+            wav_file.setframerate(self.sample_rate)
+            for sample in samples:
+                wav_file.writeframes(struct.pack('<hh', sample, sample))
+        
+        return output_file
     
-    def play_batch(self, files: list, descriptions: list):
-        """
-        Play all audio files in the batch.
-        """
-        print(f"\n{'='*60}")
-        print("🎧 Playing all {len(files)} attempts...")
-        print(f"{'='*60}")
+    def play_audio(self, file_path: str, description: str):
+        """Play an audio file and show description."""
+        print(f"\n🔊 Playing: {description}")
+        print(f"   File: {file_path}")
+        print("   Listen carefully...")
         
-        for i, (file_path, desc) in enumerate(zip(files, descriptions)):
-            print(f"\n[{i+1}/{len(files)}] {desc}")
-            print(f"   File: {file_path}")
-            print("   Playing now...\n")
-            
-            try:
-                subprocess.run(['afplay', file_path], check=True)
-            except FileNotFoundError:
-                print("   Error: afplay not found (macOS). Install with: brew install sox")
-            except Exception as e:
-                print(f"   Error playing audio: {e}")
+        try:
+            subprocess.run(['afplay', file_path], check=True)
+        except FileNotFoundError:
+            print("   Error: afplay not found (macOS). Install with: brew install sox")
+        except Exception as e:
+            print(f"   Error playing audio: {e}")
     
-    def get_user_choice(self, files: list, descriptions: list) -> int:
-        """
-        Get user's choice from a batch.
-        """
+    def get_user_choice(self, attempt1_desc: str, attempt2_desc: str) -> int:
+        """Get user feedback on which attempt is better."""
         print("\n" + "="*60)
-        print("Which version sounds best?")
+        print("Which version sounds better?")
+        print("="*60)
+        print(f"[0] {attempt1_desc}")
+        print(f"[1] {attempt2_desc}")
+        print("[2] Keep trying - generate more variations")
         print("="*60)
         
-        for i, desc in enumerate(descriptions):
-            print(f"[{i}] {desc}")
-        
-        print("[r] Regenerate batch with parameter tweaks")
-        print("[q] Quit\n")
-        
         while True:
-            choice = input("Enter choice (0-{}, r, or q): ".format(len(files)-1)).strip().lower()
+            choice = input("\nEnter choice (0, 1, or 2): ").strip()
             
-            if choice == 'q':
-                return -1  # Quit signal
-            
-            if choice == 'r':
-                return 0  # Regenerate signal
-            
-            try:
+            if choice in ['0', '1', '2']:
                 return int(choice)
-            except ValueError:
-                print("Please enter a valid number")
-    
-    def apply_tweaks(self, base_params: dict) -> dict:
-        """
-        Ask user for parameter tweaks.
-        """
-        print("\n" + "-"*60)
-        print("🔧 Parameter Tweaks")
-        print("-"*60)
-        print("\nAdjust parameters (leave blank to keep current value):")
-        
-        tweaked_params = base_params.copy()
-        
-        for key, value in base_params.items():
-            if isinstance(value, (int, float)):
-                if 'freq' in key:
-                    prompt = f"{key} (Hz, current: {value:.1f}): "
-                elif 'duration' in key:
-                    prompt = f"{key} (seconds, current: {value:.1f}): "
-                elif 'cutoff' in key:
-                    prompt = f"{key} (Hz, current: {value:.1f}): "
-                else:
-                    continue  # Skip non-numeric params
-                
-                user_input = input(prompt).strip()
-                if user_input:
-                    try:
-                        new_value = float(user_input)
-                        if new_value > 0:
-                            tweaked_params[key] = new_value
-                            print(f"  ✓ Set {key} to {new_value:.1f}")
-                    except ValueError:
-                        print(f"   Invalid value, keeping {value}")
-        
-        return tweaked_params
+            print("Please enter 0, 1, or 2")
     
     def train_sound(self, sound_name: str, generator_func: Callable, 
                    base_params: dict):
         """
         Training loop for a single sound effect.
-        
-        Args:
-            sound_name: Name of sound effect (e.g., "Door creak")
-            generator_func: Function that generates audio from parameters
-            base_params: Starting parameters for generation
         """
-        print(f"\n{'='*60}")
+        print(f"\n" + "="*60)
         print(f"🎯 Training: {sound_name}")
-        print(f"{'='*60}")
+        print("="*60)
         
-        # Descriptions for 4 systematic attempts
-        descriptions = [
-            "Base parameters",
-            "Higher frequency & cutoff",
-            "Lower frequency & cutoff",
-            "Mixed variation"
-        ]
+        # Track best iteration
+        best_params = base_params.copy()
+        iteration = 1
         
         while True:
-            # Generate batch of 4 attempts
-            print("\n📦 Generating batch of 4 attempts...")
-            files = self.generate_batch(generator_func, 4, base_params)
+            iteration += 1
             
-            # Play all attempts
-            descriptions = [
-                "Base parameters",
-                "Higher frequency & cutoff",
-                "Lower frequency & cutoff",
-                "Mixed variation"
-            ]
-            self.play_batch(files, descriptions)
+            # Generate two attempts
+            print(f"\n--- Generating attempt {iteration} ---")
+            file1 = self.generate_sound(generator_func, best_params, iteration * 2 - 1)
+            file2 = self.generate_sound(generator_func, best_params, iteration * 2)
             
-            # Get user's choice
-            print(f"\n{'='*60}")
-            choice = self.get_user_choice(files, descriptions)
-            print(f"{'='*60}")
+            # Create descriptions
+            desc1 = f"Attempt {iteration}A - Current best"
+            desc2 = f"Attempt {iteration}B - Proposed improvement"
             
-            if choice == -1:
-                # User wants to quit
-                print("\n👋 Training stopped")
-                break
+            # Play both attempts
+            self.play_audio(file1, desc1)
+            self.play_audio(file2, desc2)
             
-            elif choice == 0:
-                # User selected an attempt
-                selected_file = files[choice]
-                selected_desc = descriptions[choice]
-                
-                print(f"\n✅ Selected: {selected_desc}")
-                print(f"💾 Saving final version...")
-                
+            # Get user feedback
+            choice = self.get_user_choice(desc1, desc2)
+            
+            if choice == 0:
+                # User chose current best
+                print(f"\n✅ Keeping current best: {desc1}")
+                best_params = base_params.copy()
                 # Save as final
                 final_file = os.path.join(self.attempts_dir, f"{sound_name.replace(' ', '_')}_final.wav")
-                shutil.copy2(selected_file, final_file)
-                
-                print(f"✅ Saved final: {final_file}")
-                
-                # Copy to project root
-                project_root_final = os.path.join("..", f"{sound_name.replace(' ', '_')}_final.wav")
-                shutil.copy2(selected_file, project_root_final)
-                
-                print(f"✅ Also saved to: {project_root_final}")
-                
-                # Show what parameters were used
-                print(f"\n📊 Final parameters used:")
-                for key, value in base_params.items():
-                    if isinstance(value, (int, float)):
-                        print(f"   {key}: {value}")
-                
+                os.rename(file1, final_file)
+                print(f"💾 Saved final: {final_file}")
                 break
-            
+            elif choice == 1:
+                # User chose proposed improvement
+                print(f"\n✅ Accepting improvement: {desc2}")
+                best_params = best_params.copy()
+                # Save as final
+                final_file = os.path.join(self.attempts_dir, f"{sound_name.replace(' ', '_')}_final.wav")
+                os.rename(file2, final_file)
+                print(f"💾 Saved final: {final_file}")
+                break
             else:
-                # User wants to regenerate with parameter tweaks
-                print("\n🔄 Regenerating with your tweaks...")
-                base_params = self.apply_tweaks(base_params)
+                # Keep trying - generate new parameters
+                print(f"\n🔄 Keep trying - generating new variations...")
+                # For now, randomly vary parameters between attempt1 and attempt2
+                import random
+                new_params = {}
+                for key in best_params.keys():
+                    if isinstance(best_params[key], (int, float)):
+                        val1 = best_params[key]
+                        val2 = best_params[key]
+                        mid = (val1 + val2) / 2
+                        # Add some randomness
+                        variation = (mid - val1) * random.uniform(-0.3, 0.3)
+                        new_params[key] = mid + variation
+                    else:
+                        new_params[key] = best_params[key]
+                
+                best_params = new_params
         
         print(f"\n✨ Training complete for: {sound_name}")
-        return base_params
+        return best_params
 
 
 # Sound generator functions
@@ -281,7 +181,7 @@ def generate_door_creak(t, params, sample_rate):
     high_filter = int(sample_rate / 800)
     noise_lp = np.convolve(noise, np.ones(low_filter)/low_filter, mode='same')
     noise_bp = noise_lp - np.convolve(noise_lp, np.ones(high_filter)/high_filter, mode='same')
-    friction_mod = 0.5 + 0.3 * np.sin(2 * np.pi * 0.4 * t)
+    friction_mod = 0.5 + 0.3 * np.sin(2 * np.pi * 0.04 * t)
     noise_bp = noise_bp * friction_mod * 0.4
     
     # Sub-harmonic rumble
@@ -321,7 +221,7 @@ def generate_siren_wail(t, params, sample_rate):
     modulation = 0.5 * (1 + np.sin(2 * np.pi * wail_speed * t))
     
     # Slight randomness
-    sweep_noise = 1.0 + 0.1 * np.sin(2 * np.pi * 15 * t)
+    sweep_noise = 1.0 + 0.1 * np.sin(2 * np.pi * 10 * t)
     
     freq = (base_low + (base_high - base_low) * modulation) * sweep_noise
     
@@ -421,7 +321,7 @@ def generate_gravel_footsteps(t, params, sample_rate):
         right_channel[step_start_sample:end_sample] += gravel[:actual_samples] * right_gain
         
         # Random timing variation
-        timing_variation = (np.random.random() - 0.5) * 0.3
+        timing_variation = (np.random.random() - 0.5) * 0.3 * 0.3
         step_time += step_duration + timing_variation
         step_count += 1
     
@@ -439,77 +339,47 @@ def generate_gravel_footsteps(t, params, sample_rate):
     return signal.flatten()
 
 
-def main():
-    """Main training loop."""
+if __name__ == "__main__":
     trainer = SoundTrainer()
     
-    print("="*60)
-    print("🎵 Interactive SFX Trainer")
-    print("="*60)
-    print("This app generates 4 attempts upfront,")
-    print("then lets you pick the best version. Analogous to human training.")
-    print("\nAvailable sound effects:")
-    print(" [1] Door creak")
-    print(" [2] Siren (US wail)")
-    print(" [3] Gravel footsteps")
-    print(" [q] Quit")
-    print("="*60)
+    # Example: Train door creak
+    door_creak_params = {
+        'duration': 3.0,
+        'base_freq': 800,
+        'cutoff': 2000
+    }
     
-    while True:
-        choice = input("\nSelect sound effect to train (1-3, or q): ").strip().lower()
-        
-        if choice == 'q':
-            print("\n👋 Goodbye!")
-            break
-        
-        if choice == '1':
-            # Door creak training
-            base_params = {
-                'duration': 5.0,
-                'base_freq': 400,
-                'cutoff': 2500
-            }
-            
-            trainer.train_sound(
-                "Door creak",
-                generate_door_creak,
-                base_params
-            )
-        
-        elif choice == '2':
-            # Siren training
-            base_params = {
-                'duration': 5.0,
-                'base_low': 800,
-                'base_high': 1200,
-                'wail_speed': 2.5,
-                'cutoff': 4000
-            }
-            
-            trainer.train_sound(
-                "Siren (US wail)",
-                generate_siren_wail,
-                base_params
-            )
-        
-        elif choice == '3':
-            # Gravel footsteps training
-            base_params = {
-                'duration': 6.0,
-                'steps_per_second': 2.0,
-                'step_duration': 0.2,
-                'cutoff': 1500
-            }
-            
-            trainer.train_sound(
-                "Gravel footsteps",
-                generate_gravel_footsteps,
-                base_params
-            )
-        
-        else:
-            print("Please enter 1, 2, 3, or q")
-
-
-if __name__ == "__main__":
-    main()
+    # Example: Train siren wail
+    siren_params = {
+        'duration': 5.0,
+        'base_low': 500,
+        'base_high': 900,
+        'wail_speed': 2.5
+    }
+    
+    # Example: Train gravel footsteps
+    gravel_params = {
+        'duration': 6.0,
+        'steps_per_second': 2.0,
+        'step_duration': 0.5,
+        'cutoff': 1500
+    }
+    
+    print("SFX Trainer - Interactive Sound Effect Training")
+    print("=" * 60)
+    print("Choose a sound to train:")
+    print("[1] Door Creak")
+    print("[2] Siren Wail")
+    print("[3] Gravel Footsteps")
+    print("[0] Exit")
+    
+    choice = input("\nEnter choice: ").strip()
+    
+    if choice == '1':
+        trainer.train_sound("Door Creak", generate_door_creak, door_creak_params)
+    elif choice == '2':
+        trainer.train_sound("Siren Wail", generate_siren_wail, siren_params)
+    elif choice == '3':
+        trainer.train_sound("Gravel Footsteps", generate_gravel_footsteps, gravel_params)
+    else:
+        print("Exiting...")
