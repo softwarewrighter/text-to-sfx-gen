@@ -17,6 +17,7 @@ Instead of using AI models to generate audio directly, we use AI to:
 2. Analyze how foley artists create specific sounds
 3. Generate Python code that procedurally synthesizes those sounds
 4. The generated code uses pure mathematical algorithms - no AI/ML required at runtime
+5. Iterate on coding agent feedback to improve realism over time
 
 ### Trade-offs
 **Advantages:**
