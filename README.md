@@ -73,7 +73,7 @@ Current focus is finalizing the core set of sounds before expanding the library.
 ### Installation
 ```bash
 # Install opencode (AI coding agent)
-# See [https://opencode.ai/docs](https://opencode.ai/docs) for installation options
+# See: https://opencode.ai/docs for installation options
 
 # Create virtual environment
 uv venv
@@ -84,6 +84,31 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 # Install dependencies
 uv pip install numpy sounddevice
 ```
+
+### Interactive Training Tool
+
+A new interactive training tool (`sfx_trainer.py`) is available for iteratively refining sound effects:
+
+**How it works:**
+1. Generates 4 variations upfront (batched for efficiency)
+2. Auto-plays all versions in sequence
+3. You select which sounds best (0-3, r to regenerate)
+4. Can also apply parameter tweaks before regenerating
+5. Saves final version as `{sound_name}_final.wav`
+
+**Usage:**
+```bash
+python3 sfx_trainer.py
+```
+
+**Benefits:**
+- No waiting between generation and playback
+- Batch generation is faster
+- Compare multiple versions quickly
+- Parameter tweaking option for controlled iteration
+- Final sound automatically saved to project root
+
+This provides human-in-the-loop training for sound refinement!
 
 ### Generate Sound Effects
 
