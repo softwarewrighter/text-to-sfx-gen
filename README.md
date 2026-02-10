@@ -4,6 +4,8 @@
 
 This project demonstrates how to use an AI agent (opencode with GLM-4.7) to generate code that procedurally creates sound effects. This is an MIT-licensed approach that avoids using CC-BY-NC restrictive licensed "open" model weights, albeit with lower quality outputs. This serves as a Proof of Concept for an alternative way to generate sound effects.
 
+![Demo Page](images/screenshot.png)
+
 ## Why This Approach?
 
 ### The Problem
@@ -33,6 +35,17 @@ Instead of using AI models to generate audio directly, we use AI to:
 ## Project Goal
 
 To prove that AI-assisted procedural audio generation is a viable alternative to ML-based audio generation for creating simple sound effects, especially when open licensing is important.
+
+## Work-in-Progress Status
+
+**⚠️ This is an active project under development.**
+
+Many sound effects are still being refined:
+- **Sirens** require further tuning for realism
+- US Wail siren currently sounds too low-pitched
+- More sound effects to be added
+
+Current focus is finalizing the core set of sounds before expanding the library.
 
 ## Getting Started
 
