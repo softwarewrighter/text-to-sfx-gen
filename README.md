@@ -120,7 +120,21 @@ python3 play_3d_audio.py gravel_footsteps.wav
 | Sound | Description | Features |
 |-------|-------------|----------|
 | **Thud** | Heavy impact sound | Low-frequency oscillator, filtered noise, fast attack |
+| **Button Click** | UI interaction sound | High-frequency (2-4 kHz), sharp attack, immediate decay |
+| **Wind Whistling** | Atmospheric wind | Regular pitch variations (600-900 Hz), smooth flow |
+| **Explosion** | Blast effect | Low rumble (20-50 Hz), broadband noise, long decay |
 | **Gravel Footsteps** | Walking on gravel | 6-second sequence, irregular timing, 3D spatialization, multi-band filtering |
+| **Siren (Basic)** | Simple two-tone | 500/800 Hz alternating, 2.5 Hz cycle |
+| **Siren (US Wail)** | US-style siren with Doppler | 500-1200 Hz sweep, 3D positioning, radial velocity |
+| **Siren (EU Hi-Lo)** | European siren | 450/900 Hz alternating, Doppler effect |
+| **Siren (US Yelp)** | Fast alternating | 700 Hz, 8-10 Hz cycle, urgent feel |
+| **Flying Saucer** | Sci-fi UFO | 200-800 Hz rise-fall sweep, metallic texture, Doppler |
+
+### Notes
+- WAV files are generated in the project root directory by running generator scripts
+- The `demos/` directory contains symlinks to these WAV files for serving
+- Use headphones for best 3D spatialization effect
+- All sounds use pure mathematical synthesis (no AI models or recorded samples)
 
 ## Technical Details
 

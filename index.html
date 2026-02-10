@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedural Sound Effects - Audio Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #fff;
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+        }
+        
+        .subtitle {
+            color: #f0f0f0;
+            font-size: 1.1em;
+        }
+        
+        .description {
+            color: #c0c0c0;
+            margin-top: 10px;
+        }
+        
+        .effects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .effect-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .effect-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        .effect-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .effect-icon {
+            font-size: 1.5em;
+        }
+        
+        .effect-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        
+        .audio-player {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        
+        audio {
+            width: 100%;
+            height: 40px;
+            display: block;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #c0c0c0;
+            font-size: 0.9em;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer a:hover {
+            color: #f0f0f0;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔊 Procedural Sound Effects</h1>
+            <p class="subtitle">MIT-Licensed | No AI Models | Pure Mathematical Synthesis</p>
+            <p class="description">
+                AI-assisted code generation for sound effects using only mathematical algorithms.
+                An alternative to CC-BY-NC restricted AI models.
+            </p>
+        </header>
+        
+        <div class="note">
+            <p><strong>📝 Note:</strong> Click sound names to play them in your browser.</p>
+        </div>
+        
+        <div class="effects-grid">
+            <!-- Button Click -->
+            <div class="effect-card">
+                <div class="effect-title">
+                    <span class="effect-icon">🔘</span>
+                    <h3>Button Click</h3>
+                </div>
+                <p class="effect-description">
+                    Short, crisp UI sound. 50ms duration, high-frequency components (2-5 kHz range).
+                    Features sharp attack with immediate decay.
+                </p>
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="./button_click.wav" type="audio/wav">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+            
+            <!-- Door Creak (Wind Whistling) -->
+            <div class="effect-card">
+                <div class="effect-title">
+                    <span class="effect-icon">💨</span>
+                    <h3>Wind Whistling</h3>
+                </div>
+                <p class="effect-description">
+                    Regular, smooth pitch variations (600-900 Hz range).
+                    Features sustained tone with gentle modulation and smooth flowing quality.
+                </p>
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="./door_creak.wav" type="audio/wav">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+            
+            <!-- Explosion -->
+            <div class="effect-card">
+                <div class="effect-title">
+                    <span class="effect-icon">💥</span>
+                    <h3>Explosion</h3>
+                </div>
+                <p class="effect-description">
+                    Powerful blast effect. 2-second duration with dramatic impact.
+                    Features low-frequency rumble (20-50 Hz), broadband noise for shockwave,
+                    and long decay with reverberation.
+                </p>
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="./explosion.wav" type="audio/wav">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+            
+            <!-- Flying Saucer -->
+            <div class="effect-card">
+                <div class="effect-title">
+                    <span class="effect-icon">🛸</span>
+                    <h3>Flying Saucer (UFO)</h3>
+                </div>
+                <p class="effect-description">
+                    Sci-fi UFO sound. Smooth rise-and-fall frequency sweep (200-800 Hz range).
+                    Features cyclical modulation with metallic/electronic texture.
+                    Optional Doppler effect for approaching/receding movement.
+                </p>
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="./flying_saucer_doppler.wav" type="audio/wav">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+            
+            <!-- Gravel Footsteps -->
+            <div class="effect-card">
+                <div class="effect-title">
+                    <span class="effect-icon">👣</span>
+                    <h3>Gravel Footsteps</h3>
+                </div>
+                <p class="effect-description">
+                    6-second walking sequence on gravel. Multiple small stone impacts.
+                    Features 3D spatialization (left→right, close→far),
+                    distance attenuation, and irregular step timing.
+                    Reduces hiss with low-pass filtering.
+                </p>
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="./gravel_footsteps.wav" type="audio/wav">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+            
+            <!-- Siren (Basic) -->
+            <div class="effect-card">
+                <div class="effect-title">
+                    <span class="effect-icon">🚨</span>
+                    <h3>Siren (Basic)</h3>
+                </div>
+                <p class="effect-description">
+                    Simple two-tone alternating siren. Frequencies at 500 Hz and 800 Hz.
+                    Regular sinusoidal modulation at 2.5 Hz cycle rate.
+                    Pure oscillator-based synthesis without Doppler.
+                </p>
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="./siren.wav" type="audio/wav">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+            
+            <!-- Siren (3D with Doppler) -->
+            <div class="effect-card">
+                <div class="effect-title">
+                    <span class="effect-icon">🚨</span>
+                    <h3>Siren (3D + Doppler)</h3>
+                </div>
+                <p class="effect-description">
+                    Advanced siren with 3D spatial positioning and Doppler effect.
+                    Features US wail (800-1200 Hz), European hi-lo (450-900 Hz),
+                    and US yelp (700 Hz). Includes radial velocity simulation.
+                </p>
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="./siren_us_wail_doppler.wav" type="audio/wav">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+            
+            <!-- Siren (Realistic) -->
+            <div class="effect-card">
+                <div class="effect-title">
+                    <span class="effect-icon">🚨</span>
+                    <h3>Siren (Realistic)</h3>
+                </div>
+                <p class="effect-description">
+                    Improved US wail siren. Higher frequencies (500-900 Hz range).
+                    Features odd harmonic content for grit, tremolo for realism,
+                    and smoother rise-fall sweep with slight randomness.
+                </p>
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="./siren_us_wail_realistic.wav" type="audio/wav">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+            
+            <!-- Thud -->
+            <div class="effect-card">
+                <div class="effect-title">
+                    <span class="effect-icon">💢</span>
+                    <h3>Thud</h3>
+                </div>
+                <p class="effect-description">
+                    Heavy impact sound. 300ms duration with 60-80 Hz frequency range.
+                    Features low-frequency oscillator, filtered noise for body,
+                    fast attack (5ms) with exponential decay.
+                </p>
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="./thud.wav" type="audio/wav">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>
+                <a href="./README.md">📖 Return to README</a> |
+                <a href="https://github.com/softwarewrighter/text-to-sfx-gen">⭐ View on GitHub</a>
+            </p>
+            <p style="margin-top: 20px;">
+                Generated with <strong>opencode</strong> + <strong>GLM-4.7</strong> | MIT License
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
