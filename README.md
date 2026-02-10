@@ -6,6 +6,22 @@ This project demonstrates how to use an AI agent (opencode with GLM-4.7) to gene
 
 ![Demo Page](images/screenshot.png)
 
+## Development Process
+
+This project is developed using an AI coding agent approach:
+
+- **[opencode](https://opencode.ai)** - AI-powered coding agent for software development
+- **[Z.ai](https://z.ai)** - AI coding plan for agent workflows
+
+The workflow involves:
+1. The AI agent uses opencode to write Python scripts that generate WAV files
+2. Each script uses pure mathematical synthesis (sine waves, noise, filters, envelopes)
+3. Audio is generated procedurally without AI/ML models at runtime
+4. User feedback iterates to improve realism of sounds
+5. Research is conducted online to understand sound acoustics and foley techniques
+
+The result is code that can generate sound effects with no external AI dependencies at runtime - only the development phase uses AI assistance.
+
 ## Why This Approach?
 
 ### The Problem
