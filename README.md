@@ -11,7 +11,7 @@ This project demonstrates how to use an AI agent (opencode with GLM-4.7) to gene
 This project is developed using an AI coding agent approach:
 
 - **[opencode](https://opencode.ai)** - AI-powered coding agent for software development
-- **[Z.ai](https://z.ai)** - AI coding plan for agent workflows
+- **[Z.ai Coding Plan](https://z.ai/subscribe)** - AI coding plan and workflow management
 
 The workflow involves:
 1. The AI agent uses opencode to write Python scripts that generate WAV files
@@ -72,6 +72,9 @@ Current focus is finalizing the core set of sounds before expanding the library.
 
 ### Installation
 ```bash
+# Install opencode (AI coding agent)
+# See [https://opencode.ai/docs](https://opencode.ai/docs) for installation options
+
 # Create virtual environment
 uv venv
 
