@@ -6,6 +6,8 @@ import os
 import subprocess
 from typing import Callable
 
+from hinge_creak_generator import generate_hinge_creak
+
 class SoundTrainer:
     """
     Interactive SFX trainer - generates sound, asks questions, refines based on answers.
@@ -364,13 +366,30 @@ if __name__ == "__main__":
         'step_duration': 0.5,
         'cutoff': 1500
     }
-    
+
+    # Hinge creak parameters (research-driven synthesis)
+    hinge_creak_params = {
+        'duration': 2.5,
+        'burst_rate_hz': 6.0,
+        'burst_duration_ms': 60,
+        'noise_band_low_hz': 500,
+        'noise_band_high_hz': 6000,
+        'mode1_hz': 950,
+        'mode2_hz': 2200,
+        'mode3_hz': 3800,
+        'mode_Q': 25,
+        'glide_rate_oct': 0.5,
+        'noise_to_tone_db': 8,
+        'cutoff': 8000  # High cutoff to preserve harmonics
+    }
+
     print("SFX Trainer - Interactive Sound Effect Training")
     print("=" * 60)
     print("Choose a sound to train:")
     print("[1] Door Creak")
     print("[2] Siren Wail")
     print("[3] Gravel Footsteps")
+    print("[4] Hinge Creak (stick-slip friction)")
     print("[0] Exit")
     
     choice = input("\nEnter choice: ").strip()
@@ -381,5 +400,7 @@ if __name__ == "__main__":
         trainer.train_sound("Siren Wail", generate_siren_wail, siren_params)
     elif choice == '3':
         trainer.train_sound("Gravel Footsteps", generate_gravel_footsteps, gravel_params)
+    elif choice == '4':
+        trainer.train_sound("Hinge Creak", generate_hinge_creak, hinge_creak_params)
     else:
         print("Exiting...")
