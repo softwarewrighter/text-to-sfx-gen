@@ -120,4 +120,4 @@ def generate_wind_whistling_wav(output_file='wind_whistling.wav', duration=5.0, 
     print(f"Door creak saved to {output_file}")
 
 if __name__ == "__main__":
-    generate_door_creak_wav()
+    generate_wind_whistling_wav()
