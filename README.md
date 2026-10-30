@@ -24,7 +24,9 @@ Status and what remains: [docs/phases.md](docs/phases.md).
 **1. Research.** A hinge squeaks through stick-slip friction: the pin sticks, force builds up,
 it slips, and the cycle repeats. When the slips lock to a resonance of the metal, their
 repetition rate is the pitch you hear; when they don't, you hear separate creak clicks. Sources,
-equations and pitfalls: [docs/domain-expertise.md](docs/domain-expertise.md).
+equations and pitfalls: [docs/domain-expertise.md](docs/domain-expertise.md), produced with the
+`domain-expert` skill (see the blog post
+[AI Tools #8: A Domain-Expert Skill Restarts a Stuck Project](https://blog.softwarewrighter.com/2026/10/29/ai-tools-domain-expert-skill/)).
 
 **2. A physics model.** [Hinge Lab](hinge-lab/README.md) (Rust) simulates that friction with
 sliders, re-rendering in about 0.1 s. Same parameters and seed always give the same sound. It is
@@ -106,6 +108,7 @@ needs the local reference recording, so it runs on a developer machine.
 ## Links
 
 - Live demo: [softwarewrighter.github.io/text-to-sfx-gen](https://softwarewrighter.github.io/text-to-sfx-gen/)
+- Related blog post: [AI Tools #8: A Domain-Expert Skill Restarts a Stuck Project](https://blog.softwarewrighter.com/2026/10/29/ai-tools-domain-expert-skill/)
 - Blog: [Software Wrighter Lab](https://software-wrighter-lab.github.io/)
 - Discord: [Join the community](https://discord.com/invite/Ctzk5uHggZ)
 - YouTube: [Software Wrighter](https://www.youtube.com/@SoftwareWrighter)
