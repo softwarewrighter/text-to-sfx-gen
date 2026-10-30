@@ -1,0 +1,30 @@
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 18px 60px;
+  color: #222;
+  line-height: 1.55;
+}
+header { border-bottom: 1px solid #ddd; margin-bottom: 24px; }
+h1 { margin-bottom: 4px; }
+.subtitle { color: #555; margin-top: 0; }
+nav a { margin-right: 14px; }
+.phases { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.card { border: 1px solid #ddd; border-radius: 10px; padding: 14px 16px; }
+.card img, figure img { width: 100%; border: 1px solid #ddd; border-radius: 6px; }
+.tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 9px; background: #eef; }
+figure { margin: 18px 0; }
+figcaption { font-size: 14px; color: #555; }
+table { border-collapse: collapse; font-size: 14px; }
+td, th { border: 1px solid #ddd; padding: 4px 8px; text-align: left; vertical-align: middle; }
+audio { height: 32px; vertical-align: middle; }
+code { background: #f3f3f3; padding: 1px 4px; border-radius: 3px; }
+.note { background: #fff8e1; border: 1px solid #f0d58c; padding: 10px 14px; border-radius: 8px; }
+@media (max-width: 760px) { .phases { grid-template-columns: 1fr; } }
+.toc a { margin-right: 14px; }
+.desc { color: #666; font-size: 14px; font-weight: normal; }
+table.compact td { padding: 2px 8px; }
+ul.details li { margin-bottom: 12px; }
+img.thumb { max-width: 520px; width: 100%; margin-top: 6px; border: 1px solid #ddd; border-radius: 6px; }
+section { margin-top: 30px; }

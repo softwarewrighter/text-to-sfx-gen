@@ -1,0 +1,177 @@
+#!/usr/bin/env python3
+"""
+Write the demo site's pages (called by tools/build_site.sh after audio and analysis exist).
+
+    site/index.html      TOC, Part 1 players, Part 2 players, Details (summary + links)
+    site/hinge-lab.html  Detail page: the physics model (screenshot + preset players)
+
+The full reference analysis (site/analysis/index.html) is written by squeak_analysis.py.
+"""
+
+import html
+import json
+import sys
+from pathlib import Path
+
+REPO = 'https://github.com/softwarewrighter/text-to-sfx-gen'
+SOURCE_URL = 'https://www.youtube.com/watch?v=TspuiaFX2YQ'
+SOURCE_TITLE = 'Squeaky Door Hinge Opening Sound Effects (SoundEffectsFactory, YouTube)'
+
+# Part 1: (file in audio/part1, name, description)
+PART1 = [
+    ('thud.wav', 'Thud', '0.5 s. Click, a pitch-dropping body and a mid-range knock. Revised 2026-10: '
+     'the original was almost all below 100 Hz and silent on laptop speakers.'),
+    ('button_click.wav', 'Button click', '50 ms. High-frequency (2–4 kHz) blip with an instant decay.'),
+    ('explosion.wav', 'Explosion', 'Low rumble (20–50 Hz) plus broadband noise and a long decay.'),
+    ('flying_saucer_doppler.wav', 'Flying saucer', 'Rise-and-fall sweep with a metallic '
+     'texture, passing by with Doppler shift.'),
+    ('gravel_footsteps.wav', 'Gravel footsteps', 'Stone impacts per step, irregular timing, '
+     'panned left to right (use headphones).'),
+    ('siren.wav', 'Siren (basic)', 'Two alternating tones, 500/800 Hz.'),
+    ('siren_us_wail_doppler.wav', 'Siren (US wail + Doppler)', 'Wail sweep moving past the '
+     'listener.'),
+    ('siren_eu_hilo_doppler.wav', 'Siren (EU hi-lo + Doppler)', 'European two-tone moving past.'),
+    ('door_creak.wav', '"Door creak"', 'The first door creak attempt. It sounds like wind, and '
+     'was later renamed "wind whistling".'),
+    ('hinge_creak.wav', 'Hinge creak', 'The first stick-slip hinge attempt: noise bursts plus '
+     'a separate tone. Not convincing.'),
+]
+
+CATEGORY_ORDER = ['stepped squeak', 'gliding squeak', 'squeak → creak', 'creak / ratchet',
+                  'low groan']
+CATEGORY_HELP = {
+    'stepped squeak': 'steady pitches with sudden jumps between them',
+    'gliding squeak': 'one continuous pitch slide',
+    'squeak → creak': 'a clean squeak that breaks into separate clicks',
+    'creak / ratchet': 'mostly individual clicks',
+    'low groan': 'low and wobbly',
+}
+
+HINGE_PRESETS = ['squeaky', 'oiled', 'horror_slow', 'rusty_groan', 'fast_swing', 'cabinet_tiny']
+
+
+def page(title, body):
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(title)}</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+{body}
+</body>
+</html>
+"""
+
+
+def player(src):
+    return f'<audio controls preload="metadata" src="{src}"></audio>'
+
+
+def index_page(rows):
+    part1 = ''.join(
+        f'<tr><td><b>{name}</b><br><span class="desc">{desc}</span></td>'
+        f'<td>{player("audio/part1/" + f)}</td></tr>' for f, name, desc in PART1)
+
+    by_cat = {c: [r for r in rows if r['category'] == c] for c in CATEGORY_ORDER}
+    part2 = ''
+    for cat in CATEGORY_ORDER:
+        if not by_cat[cat]:
+            continue
+        items = ''
+        for r in by_cat[cat]:
+            n = r['id']
+            items += (f'<tr><td>#{n}</td><td>{r["features"]["duration_s"]:.1f} s</td>'
+                      f'<td>{player(f"analysis/ev{n}_resynth.wav")}</td>'
+                      f'<td><a href="analysis/index.html#ev{n}">analysis</a></td></tr>')
+        part2 += (f'<h3>{html.escape(cat)} <span class="desc">— {CATEGORY_HELP[cat]}</span></h3>'
+                  f'<table class="compact">{items}</table>')
+
+    body = f"""<header>
+  <h1>Text-to-SFX: procedural sound effects</h1>
+  <p class="subtitle">Sound effects made by code, not by AI models. AI agents researched the
+  sounds and wrote the code; the code uses only math, so every sound here is MIT-licensed.</p>
+  <nav class="toc"><b>Contents:</b>
+    <a href="#part1">1. First attempt</a>
+    <a href="#part2">2. Second attempt</a>
+    <a href="#details">3. Details</a>
+    <a href="{REPO}">Source on GitHub</a></nav>
+</header>
+
+<section id="part1">
+<h2>1. First attempt (2026-02)</h2>
+<p>An AI coding agent (opencode with GLM-4.7) wrote one Python generator per sound, using sine
+waves, noise, filters and envelopes. Simple sounds came out well; the door sounds did not.</p>
+<table>{part1}</table>
+</section>
+
+<section id="part2">
+<h2>2. Second attempt: the squeaky hinge (2026-10)</h2>
+<p>With Claude Code (Claude Opus 5.5), we researched friction acoustics, built a physical model,
+then measured {len(rows)} real squeaks. Real squeaks turned out to be sequences of parts: steady
+pitches with sudden jumps, glides, and clean stretches that break into clicks, all driven by
+sharp stick-slip pulses. Each sound below is generated by our code from those measurements.</p>
+{part2}
+</section>
+
+<section id="details">
+<h2>3. Details</h2>
+<ul class="details">
+  <li><b>Reference recording:</b> <a href="{SOURCE_URL}">{html.escape(SOURCE_TITLE)}</a>.
+  It is not redistributed here (unclear provenance); the analysis page links each squeak to its
+  timestamp in the video.</li>
+  <li><b><a href="analysis/index.html">Full analysis of the {len(rows)} squeaks</a>:</b>
+  spectrograms with measured pitch, five categories, a feature table, and how each rebuild
+  compares with the original.
+  <br><a href="analysis/index.html"><img class="thumb" src="images/analysis-overview.png"
+  alt="Category comparison plots"></a></li>
+  <li><b><a href="hinge-lab.html">The physics model (Hinge Lab)</a>:</b> a Rust app with
+  sliders that simulates stick-slip friction. Physically right (it squeaks only within a speed
+  window, and oil silences it) but it sounded too smooth, which is what led to measuring real
+  squeaks.</li>
+  <li><b><a href="{REPO}/blob/main/docs/domain-expertise.md">Research briefing</a>:</b> the
+  physics of squeaks and creaks, with equations and primary sources (Akay 2002; Avanzini,
+  Serafin &amp; Rocchesso 2002; Farnell 2010).</li>
+  <li><b><a href="{REPO}/blob/main/docs/phases.md">Status and next steps</a>:</b> what remains
+  for each part.</li>
+</ul>
+<p class="desc">All audio on this site is generated by this project's code (MIT).</p>
+</section>
+"""
+    return page('Text-to-SFX: procedural sound effects', body)
+
+
+def hinge_page():
+    rows = ''.join(
+        f'<tr><td>{p}</td><td>{player(f"audio/hinge/{p}.wav")}</td>'
+        f'<td><a href="audio/hinge/{p}.json">{p}.json</a></td></tr>' for p in HINGE_PRESETS)
+    body = f"""<header>
+  <h1>The physics model: Hinge Lab</h1>
+  <nav class="toc"><a href="index.html">← Back to the demo</a>
+  <a href="{REPO}/tree/main/hinge-lab">Source</a></nav>
+</header>
+<p>Hinge Lab simulates elasto-plastic stick-slip friction between the hinge pin and barrel,
+driving hinge and door-leaf resonances, radiated through a wood panel and door frame. Sliders
+re-render in about 0.1 s, and the same parameters plus seed always give the same sound.</p>
+<img src="images/hinge-lab-ui.png" alt="Hinge Lab UI">
+<h2>Presets</h2>
+<p>Each JSON file reproduces its sound exactly.</p>
+<table>{rows}</table>
+<p class="note">These behave correctly physically, but each is one smooth, slowly gliding tone
+with few overtones, unlike a real door. Measuring real squeaks
+(<a href="analysis/index.html">analysis</a>) showed what was missing.</p>
+"""
+    return page('Hinge Lab', body)
+
+
+def main():
+    site = Path(sys.argv[1])
+    rows = json.loads((site / 'analysis' / 'analysis.json').read_text())
+    (site / 'index.html').write_text(index_page(rows))
+    (site / 'hinge-lab.html').write_text(hinge_page())
+
+
+if __name__ == '__main__':
+    main()
