@@ -21,6 +21,9 @@ Status and what remains: [docs/phases.md](docs/phases.md).
 
 ## The squeaky hinge
 
+<a href="https://blog.softwarewrighter.com/2026/10/29/ai-tools-domain-expert-skill/"><img src="images/block-hinge-math.jpg" align="right" width="180"
+  alt="Blog post: AI Tools #8: A Domain-Expert Skill Restarts a Stuck Project"></a>
+
 **1. Research.** A hinge squeaks through stick-slip friction: the pin sticks, force builds up,
 it slips, and the cycle repeats. When the slips lock to a resonance of the metal, their
 repetition rate is the pitch you hear; when they don't, you hear separate creak clicks. Sources,
@@ -77,6 +80,8 @@ needs the local reference recording, so it runs on a developer machine.
 
 ## Documentation
 
+- [docs/explain.md](docs/explain.md): plain-language guide to what each file does (creates,
+  saves, plays or graphs audio)
 - [docs/phase1.md](docs/phase1.md): first attempt (generators, trainer, sound list)
 - [docs/domain-expertise.md](docs/domain-expertise.md): friction-acoustics research briefing
 - [docs/phases.md](docs/phases.md): status and remaining work
