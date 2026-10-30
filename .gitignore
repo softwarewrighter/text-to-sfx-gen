@@ -2,3 +2,16 @@
 /*.wav
 /.playwright-cli
 /__pycache__/
+/demos/hinge/*.wav
+/references/
+/site/
+__pycache__/
+
+# Third-party reference audio (e.g. extracted from YouTube) must never be tracked or
+# redistributed. Keep it in references/; these patterns also catch strays elsewhere.
+*_ref.wav
+*.webm
+*.m4a
+*.opus
+*.mp4
+*.mkv
