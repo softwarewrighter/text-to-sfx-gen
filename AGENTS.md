@@ -23,6 +23,15 @@ MIT-licensed alternative to CC-BY-NC restricted AI models.
 - **Purpose**: Structured approach to AI-assisted development
 - **Usage**: Provides coding plans and workflow management
 
+## Agent Skills
+
+### domain-expert
+- **Location**: `.claude/skills/domain-expert/SKILL.md`
+- **Description**: Researches an unfamiliar domain from primary sources before domain-heavy work
+- **Output**: Dated, sourced briefing saved to `docs/briefings/<topic>-YYYY-MM-DD.md`
+- **Usage**: Run `/domain-expert <topic>` in Claude Code, or let it trigger automatically
+  before work like tuning siren realism or adding new sound types (rain, thunder, fire)
+
 ## Core Dependencies
 
 ### Python Dependencies
@@ -141,11 +150,13 @@ All generators use `numpy` for procedural audio synthesis:
 
 ```
 text-to-sfx-gen/
+├── .claude/skills/           # Claude Code project skills (domain-expert)
 ├── .venv/                    # Virtual environment
 ├── attempts/                   # Training attempts (created by sfx_trainer.py)
 ├── demos/                      # Demo page with audio players
 │   └── *.wav               # Symlinks to parent directory WAV files
 ├── docs/                        # Documentation
+│   ├── briefings/              # Domain briefings (created by domain-expert skill)
 │   ├── research-findings.md   # Comprehensive audio synthesis research
 │   └── 3D_AUDIO_README.md   # 3D spatial audio docs
 ├── images/                      # Screenshots and visuals
@@ -192,6 +203,10 @@ text-to-sfx-gen/
 - `docs/research-findings.md` - Audio synthesis research
 - `docs/3D_AUDIO_README.md` - Spatial audio techniques
 - `session-ses_3ba5.md` - Development history
+- `docs/briefings/*.md` - Domain research briefings
+
+### Agent Skills
+- `.claude/skills/domain-expert/SKILL.md` - Domain research skill
 
 ### Build/Dev Files
 - `.playwright-cli/` - Playwright workspace (gitignored)
