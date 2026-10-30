@@ -185,12 +185,6 @@ It needs the local reference recording, so it runs on a developer machine.
 └── references/               Local reference recordings (gitignored, not redistributed)
 ```
 
-## License
-
-MIT License. See [LICENSE](LICENSE). Use in commercial projects, modify, redistribute;
-attribution appreciated but not required. The reference recording analyzed in Phase 2 is not
-part of this repository and is not covered by this license.
-
 ## Acknowledgments
 
 - **opencode** with **GLM-4.7**: Phase 1 code generation
@@ -199,3 +193,21 @@ part of this repository and is not covered by this license.
 - **Adnan Akay; Federico Avanzini, Stefania Serafin and Davide Rocchesso; Andy Farnell**: the
   friction-sound research and techniques Phase 2 builds on
 - **Foley artists and sound designers**, whose techniques inform the procedural approaches
+
+## Links
+
+- Live demo: [softwarewrighter.github.io/text-to-sfx-gen](https://softwarewrighter.github.io/text-to-sfx-gen/)
+- Blog: [Software Wrighter Lab](https://software-wrighter-lab.github.io/)
+- Discord: [Join the community](https://discord.com/invite/Ctzk5uHggZ)
+- YouTube: [Software Wrighter](https://www.youtube.com/@SoftwareWrighter)
+
+## Copyright
+
+Copyright (c) 2026 Michael A Wright
+
+## License
+
+MIT. See [`LICENSE`](LICENSE) and [`COPYRIGHT`](COPYRIGHT).
+
+The reference recording analyzed in Phase 2 is not part of this repository and is not covered
+by this license.

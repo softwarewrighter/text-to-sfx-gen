@@ -21,6 +21,12 @@ CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 [ -x "$PY" ] || { echo "Missing .venv: run 'uv venv && uv pip install numpy matplotlib'"; exit 1; }
 [ -f "$REFERENCE" ] || { echo "Missing $REFERENCE (see docs/phases.md)"; exit 1; }
 
+# Footer build info, captured before the build regenerates tracked screenshots
+export BUILD_HOST="$(hostname -s)"
+export BUILD_SHA="$(git rev-parse HEAD)"
+export BUILD_DIRTY="$([ -n "$(git status --porcelain)" ] && echo 1 || echo 0)"
+export BUILD_TIME="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
 rm -rf "$SITE"
 mkdir -p "$SITE/audio/part1" "$SITE/audio/hinge" "$SITE/images"
 cp site-src/style.css "$SITE/"
