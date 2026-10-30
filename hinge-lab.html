@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hinge Lab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>The physics model: Hinge Lab</h1>
+  <nav class="toc"><a href="index.html">← Back to the demo</a>
+  <a href="https://github.com/softwarewrighter/text-to-sfx-gen/tree/main/hinge-lab">Source</a></nav>
+</header>
+<p>Hinge Lab simulates elasto-plastic stick-slip friction between the hinge pin and barrel,
+driving hinge and door-leaf resonances, radiated through a wood panel and door frame. Sliders
+re-render in about 0.1 s, and the same parameters plus seed always give the same sound.</p>
+<img src="images/hinge-lab-ui.png" alt="Hinge Lab UI">
+<h2>Presets</h2>
+<p>Each JSON file reproduces its sound exactly.</p>
+<table><tr><td>squeaky</td><td><audio controls preload="metadata" src="audio/hinge/squeaky.wav"></audio></td><td><a href="audio/hinge/squeaky.json">squeaky.json</a></td></tr><tr><td>oiled</td><td><audio controls preload="metadata" src="audio/hinge/oiled.wav"></audio></td><td><a href="audio/hinge/oiled.json">oiled.json</a></td></tr><tr><td>horror_slow</td><td><audio controls preload="metadata" src="audio/hinge/horror_slow.wav"></audio></td><td><a href="audio/hinge/horror_slow.json">horror_slow.json</a></td></tr><tr><td>rusty_groan</td><td><audio controls preload="metadata" src="audio/hinge/rusty_groan.wav"></audio></td><td><a href="audio/hinge/rusty_groan.json">rusty_groan.json</a></td></tr><tr><td>fast_swing</td><td><audio controls preload="metadata" src="audio/hinge/fast_swing.wav"></audio></td><td><a href="audio/hinge/fast_swing.json">fast_swing.json</a></td></tr><tr><td>cabinet_tiny</td><td><audio controls preload="metadata" src="audio/hinge/cabinet_tiny.wav"></audio></td><td><a href="audio/hinge/cabinet_tiny.json">cabinet_tiny.json</a></td></tr></table>
+<p class="note">These behave correctly physically, but each is one smooth, slowly gliding tone
+with few overtones, unlike a real door. Measuring real squeaks
+(<a href="analysis/index.html">analysis</a>) showed what was missing.</p>
+
+</body>
+</html>

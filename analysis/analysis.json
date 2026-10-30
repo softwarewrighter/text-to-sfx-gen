@@ -1,0 +1,1810 @@
+[
+ {
+  "id": 0,
+  "start_s": 0.96,
+  "category": "squeak \u2192 creak",
+  "features": {
+   "duration_s": 4.56,
+   "creak_rate_hz": 146.0,
+   "squeak_pct": 69.0,
+   "n_segments": 22,
+   "n_jumps": 3,
+   "median_jump_st": 20.7,
+   "f0_median_hz": 361.0,
+   "f0_range_st": 32.0,
+   "mean_glide_st": 5.6,
+   "wobble_st": 1.59,
+   "centroid_hz": 4466.0,
+   "harmonic_count": 12.4
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.349,
+    "type": "creak",
+    "roughness": 0.737,
+    "level_db": -46.0
+   },
+   {
+    "start_s": 0.349,
+    "dur_s": 0.195,
+    "type": "squeak",
+    "roughness": 0.009,
+    "level_db": -30.0,
+    "f0_start": 1541.3,
+    "f0_end": 1635.2,
+    "f0_median": 1623.6
+   },
+   {
+    "start_s": 0.544,
+    "dur_s": 0.175,
+    "type": "squeak",
+    "roughness": 0.144,
+    "level_db": -22.6,
+    "f0_start": 1363.5,
+    "f0_end": 1060.5,
+    "f0_median": 1135.7
+   },
+   {
+    "start_s": 0.718,
+    "dur_s": 0.105,
+    "type": "squeak",
+    "roughness": 0.116,
+    "level_db": -22.5,
+    "f0_start": 408.6,
+    "f0_end": 665.9,
+    "f0_median": 691.6
+   },
+   {
+    "start_s": 0.823,
+    "dur_s": 0.06,
+    "type": "creak",
+    "roughness": 0.425,
+    "level_db": -24.3
+   },
+   {
+    "start_s": 0.883,
+    "dur_s": 1.152,
+    "type": "creak",
+    "roughness": 0.603,
+    "level_db": -32.4,
+    "f0_start": 446.6,
+    "f0_end": 444.4,
+    "f0_median": 445.7
+   },
+   {
+    "start_s": 2.035,
+    "dur_s": 0.135,
+    "type": "squeak",
+    "roughness": 0.063,
+    "level_db": -44.4,
+    "f0_start": 362.3,
+    "f0_end": 380.3,
+    "f0_median": 384.6
+   },
+   {
+    "start_s": 2.17,
+    "dur_s": 0.04,
+    "type": "creak",
+    "roughness": 0.475,
+    "level_db": -46.6
+   },
+   {
+    "start_s": 2.21,
+    "dur_s": 0.125,
+    "type": "squeak",
+    "roughness": 0.116,
+    "level_db": -48.6,
+    "f0_start": 301.5,
+    "f0_end": 328.4,
+    "f0_median": 301.8
+   },
+   {
+    "start_s": 2.335,
+    "dur_s": 0.06,
+    "type": "squeak",
+    "roughness": 0.226,
+    "level_db": -47.3,
+    "f0_start": 409.1,
+    "f0_end": 436.1,
+    "f0_median": 420.1
+   },
+   {
+    "start_s": 2.395,
+    "dur_s": 0.085,
+    "type": "creak",
+    "roughness": 0.288,
+    "level_db": -47.1
+   },
+   {
+    "start_s": 2.479,
+    "dur_s": 0.294,
+    "type": "squeak",
+    "roughness": 0.06,
+    "level_db": -27.7,
+    "f0_start": 759.5,
+    "f0_end": 1134.6,
+    "f0_median": 1133.2
+   },
+   {
+    "start_s": 2.774,
+    "dur_s": 0.055,
+    "type": "squeak",
+    "roughness": 0.127,
+    "level_db": -22.5,
+    "f0_start": 560.4,
+    "f0_end": 538.3,
+    "f0_median": 549.5
+   },
+   {
+    "start_s": 2.829,
+    "dur_s": 0.095,
+    "type": "squeak",
+    "roughness": 0.119,
+    "level_db": -24.7,
+    "f0_start": 162.2,
+    "f0_end": 946.5,
+    "f0_median": 951.0
+   },
+   {
+    "start_s": 2.923,
+    "dur_s": 0.145,
+    "type": "squeak",
+    "roughness": 0.072,
+    "level_db": -23.1,
+    "f0_start": 236.2,
+    "f0_end": 635.9,
+    "f0_median": 676.4
+   },
+   {
+    "start_s": 3.068,
+    "dur_s": 0.05,
+    "type": "creak",
+    "roughness": 0.394,
+    "level_db": -25.1
+   },
+   {
+    "start_s": 3.118,
+    "dur_s": 0.055,
+    "type": "squeak",
+    "roughness": 0.214,
+    "level_db": -23.6,
+    "f0_start": 449.7,
+    "f0_end": 427.1,
+    "f0_median": 437.4
+   },
+   {
+    "start_s": 3.173,
+    "dur_s": 0.05,
+    "type": "creak",
+    "roughness": 0.325,
+    "level_db": -25.4
+   },
+   {
+    "start_s": 3.223,
+    "dur_s": 0.524,
+    "type": "squeak",
+    "roughness": 0.055,
+    "level_db": -27.9,
+    "f0_start": 377.2,
+    "f0_end": 317.8,
+    "f0_median": 354.6
+   },
+   {
+    "start_s": 3.746,
+    "dur_s": 0.584,
+    "type": "squeak",
+    "roughness": 0.067,
+    "level_db": -34.4,
+    "f0_start": 288.4,
+    "f0_end": 289.2,
+    "f0_median": 264.1
+   },
+   {
+    "start_s": 4.33,
+    "dur_s": 0.045,
+    "type": "creak",
+    "roughness": 0.289,
+    "level_db": -36.1
+   },
+   {
+    "start_s": 4.375,
+    "dur_s": 0.15,
+    "type": "squeak",
+    "roughness": 0.131,
+    "level_db": -44.8,
+    "f0_start": 331.5,
+    "f0_end": 380.7,
+    "f0_median": 370.4
+   }
+  ]
+ },
+ {
+  "id": 1,
+  "start_s": 9.35,
+  "category": "stepped squeak",
+  "features": {
+   "duration_s": 1.62,
+   "creak_rate_hz": 0,
+   "squeak_pct": 95.0,
+   "n_segments": 7,
+   "n_jumps": 4,
+   "median_jump_st": 8.3,
+   "f0_median_hz": 706.0,
+   "f0_range_st": 21.6,
+   "mean_glide_st": 1.7,
+   "wobble_st": 1.28,
+   "centroid_hz": 3826.0,
+   "harmonic_count": 5.4
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.264,
+    "type": "squeak",
+    "roughness": 0.003,
+    "level_db": -28.9,
+    "f0_start": 1511.1,
+    "f0_end": 1632.7,
+    "f0_median": 1615.3
+   },
+   {
+    "start_s": 0.264,
+    "dur_s": 0.334,
+    "type": "squeak",
+    "roughness": 0.09,
+    "level_db": -23.4,
+    "f0_start": 1413.7,
+    "f0_end": 1050.8,
+    "f0_median": 1286.2
+   },
+   {
+    "start_s": 0.599,
+    "dur_s": 0.065,
+    "type": "squeak",
+    "roughness": 0.065,
+    "level_db": -24.8,
+    "f0_start": 1919.5,
+    "f0_end": 936.1,
+    "f0_median": 945.4
+   },
+   {
+    "start_s": 0.663,
+    "dur_s": 0.354,
+    "type": "squeak",
+    "roughness": 0.035,
+    "level_db": -27.3,
+    "f0_start": 310.2,
+    "f0_end": 551.3,
+    "f0_median": 634.2
+   },
+   {
+    "start_s": 1.018,
+    "dur_s": 0.254,
+    "type": "squeak",
+    "roughness": 0.023,
+    "level_db": -29.7,
+    "f0_start": 469.3,
+    "f0_end": 474.5,
+    "f0_median": 468.5
+   },
+   {
+    "start_s": 1.272,
+    "dur_s": 0.18,
+    "type": "squeak",
+    "roughness": 0.067,
+    "level_db": -39.0,
+    "f0_start": 602.6,
+    "f0_end": 679.8,
+    "f0_median": 633.0
+   },
+   {
+    "start_s": 1.452,
+    "dur_s": 0.135,
+    "type": "creak",
+    "roughness": 0.909,
+    "level_db": -56.3
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "start_s": 13.62,
+  "category": "stepped squeak",
+  "features": {
+   "duration_s": 1.11,
+   "creak_rate_hz": 0,
+   "squeak_pct": 100.0,
+   "n_segments": 4,
+   "n_jumps": 3,
+   "median_jump_st": 2.6,
+   "f0_median_hz": 1383.0,
+   "f0_range_st": 10.6,
+   "mean_glide_st": 1.5,
+   "wobble_st": 0.22,
+   "centroid_hz": 3974.0,
+   "harmonic_count": 2.9
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.22,
+    "type": "squeak",
+    "roughness": 0.007,
+    "level_db": -31.3,
+    "f0_start": 1510.6,
+    "f0_end": 1667.9,
+    "f0_median": 1603.6
+   },
+   {
+    "start_s": 0.22,
+    "dur_s": 0.394,
+    "type": "squeak",
+    "roughness": 0.024,
+    "level_db": -28.1,
+    "f0_start": 1431.2,
+    "f0_end": 1347.5,
+    "f0_median": 1391.6
+   },
+   {
+    "start_s": 0.614,
+    "dur_s": 0.444,
+    "type": "squeak",
+    "roughness": 0.059,
+    "level_db": -29.2,
+    "f0_start": 1130.4,
+    "f0_end": 1412.4,
+    "f0_median": 973.1
+   },
+   {
+    "start_s": 1.058,
+    "dur_s": 0.02,
+    "type": "squeak",
+    "roughness": 0.205,
+    "level_db": -56.8,
+    "f0_start": 466.1,
+    "f0_end": 465.9,
+    "f0_median": 466.0
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "start_s": 16.26,
+  "category": "squeak \u2192 creak",
+  "features": {
+   "duration_s": 0.77,
+   "creak_rate_hz": 0,
+   "squeak_pct": 55.0,
+   "n_segments": 7,
+   "n_jumps": 5,
+   "median_jump_st": 5.9,
+   "f0_median_hz": 962.0,
+   "f0_range_st": 18.8,
+   "mean_glide_st": 2.1,
+   "wobble_st": 2.23,
+   "centroid_hz": 6498.0,
+   "harmonic_count": 6.8
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.324,
+    "type": "creak",
+    "roughness": 1.903,
+    "level_db": -40.2
+   },
+   {
+    "start_s": 0.324,
+    "dur_s": 0.06,
+    "type": "squeak",
+    "roughness": 0.102,
+    "level_db": -25.8,
+    "f0_start": 1005.9,
+    "f0_end": 1409.4,
+    "f0_median": 1413.2
+   },
+   {
+    "start_s": 0.384,
+    "dur_s": 0.125,
+    "type": "squeak",
+    "roughness": 0.101,
+    "level_db": -29.2,
+    "f0_start": 484.6,
+    "f0_end": 774.2,
+    "f0_median": 735.7
+   },
+   {
+    "start_s": 0.509,
+    "dur_s": 0.055,
+    "type": "squeak",
+    "roughness": 0.152,
+    "level_db": -40.1,
+    "f0_start": 962.5,
+    "f0_end": 1154.8,
+    "f0_median": 962.5
+   },
+   {
+    "start_s": 0.564,
+    "dur_s": 0.11,
+    "type": "squeak",
+    "roughness": 0.113,
+    "level_db": -41.6,
+    "f0_start": 1439.8,
+    "f0_end": 1147.1,
+    "f0_median": 1148.8
+   },
+   {
+    "start_s": 0.673,
+    "dur_s": 0.05,
+    "type": "squeak",
+    "roughness": 0.182,
+    "level_db": -53.9,
+    "f0_start": 817.2,
+    "f0_end": 817.0,
+    "f0_median": 817.0
+   },
+   {
+    "start_s": 0.723,
+    "dur_s": 0.015,
+    "type": "squeak",
+    "roughness": 0.215,
+    "level_db": -59.5
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "start_s": 18.25,
+  "category": "gliding squeak",
+  "features": {
+   "duration_s": 2.2,
+   "creak_rate_hz": 73.0,
+   "squeak_pct": 82.0,
+   "n_segments": 8,
+   "n_jumps": 2,
+   "median_jump_st": 23.3,
+   "f0_median_hz": 625.0,
+   "f0_range_st": 34.5,
+   "mean_glide_st": -4.6,
+   "wobble_st": 0.7,
+   "centroid_hz": 3273.0,
+   "harmonic_count": 5.2
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.678,
+    "type": "squeak",
+    "roughness": 0.095,
+    "level_db": -34.9,
+    "f0_start": 955.3,
+    "f0_end": 479.3,
+    "f0_median": 763.6
+   },
+   {
+    "start_s": 0.678,
+    "dur_s": 0.045,
+    "type": "creak",
+    "roughness": 0.328,
+    "level_db": -38.8
+   },
+   {
+    "start_s": 0.723,
+    "dur_s": 0.125,
+    "type": "squeak",
+    "roughness": 0.182,
+    "level_db": -37.7,
+    "f0_start": 429.3,
+    "f0_end": 411.1,
+    "f0_median": 410.3
+   },
+   {
+    "start_s": 0.848,
+    "dur_s": 0.04,
+    "type": "squeak",
+    "roughness": 0.232,
+    "level_db": -39.2,
+    "f0_start": 137.3,
+    "f0_end": 136.7,
+    "f0_median": 136.7
+   },
+   {
+    "start_s": 0.888,
+    "dur_s": 0.21,
+    "type": "creak",
+    "roughness": 0.331,
+    "level_db": -41.7
+   },
+   {
+    "start_s": 1.098,
+    "dur_s": 0.125,
+    "type": "squeak",
+    "roughness": 0.214,
+    "level_db": -43.3,
+    "f0_start": 126.2,
+    "f0_end": 130.4,
+    "f0_median": 130.4
+   },
+   {
+    "start_s": 1.222,
+    "dur_s": 0.788,
+    "type": "squeak",
+    "roughness": 0.026,
+    "level_db": -44.6,
+    "f0_start": 644.3,
+    "f0_end": 453.2,
+    "f0_median": 627.0
+   },
+   {
+    "start_s": 2.01,
+    "dur_s": 0.155,
+    "type": "creak",
+    "roughness": 0.594,
+    "level_db": -46.1
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "start_s": 23.22,
+  "category": "stepped squeak",
+  "features": {
+   "duration_s": 1.6,
+   "creak_rate_hz": 0,
+   "squeak_pct": 90.0,
+   "n_segments": 8,
+   "n_jumps": 4,
+   "median_jump_st": 15.5,
+   "f0_median_hz": 1401.0,
+   "f0_range_st": 10.8,
+   "mean_glide_st": 8.5,
+   "wobble_st": 3.17,
+   "centroid_hz": 4272.0,
+   "harmonic_count": 3.0
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.065,
+    "type": "squeak",
+    "roughness": 0.054,
+    "level_db": -44.4,
+    "f0_start": 1534.2,
+    "f0_end": 1443.0,
+    "f0_median": 1483.7
+   },
+   {
+    "start_s": 0.065,
+    "dur_s": 0.294,
+    "type": "creak",
+    "roughness": 1.6,
+    "level_db": -43.4
+   },
+   {
+    "start_s": 0.359,
+    "dur_s": 0.055,
+    "type": "creak",
+    "roughness": 0.296,
+    "level_db": -48.9,
+    "f0_start": 1492.3,
+    "f0_end": 1490.5,
+    "f0_median": 1490.5
+   },
+   {
+    "start_s": 0.414,
+    "dur_s": 0.234,
+    "type": "squeak",
+    "roughness": 0.006,
+    "level_db": -36.0,
+    "f0_start": 1549.5,
+    "f0_end": 1767.8,
+    "f0_median": 1680.3
+   },
+   {
+    "start_s": 0.649,
+    "dur_s": 0.055,
+    "type": "squeak",
+    "roughness": 0.048,
+    "level_db": -25.9,
+    "f0_start": 590.5,
+    "f0_end": 2304.4,
+    "f0_median": 2307.0
+   },
+   {
+    "start_s": 0.703,
+    "dur_s": 0.434,
+    "type": "squeak",
+    "roughness": 0.022,
+    "level_db": -26.2,
+    "f0_start": 1134.5,
+    "f0_end": 1354.8,
+    "f0_median": 1401.8
+   },
+   {
+    "start_s": 1.137,
+    "dur_s": 0.404,
+    "type": "squeak",
+    "roughness": 0.03,
+    "level_db": -30.1,
+    "f0_start": 448.3,
+    "f0_end": 1423.6,
+    "f0_median": 991.2
+   },
+   {
+    "start_s": 1.541,
+    "dur_s": 0.025,
+    "type": "squeak",
+    "roughness": 0.2,
+    "level_db": -56.5,
+    "f0_start": 712.5,
+    "f0_end": 712.5,
+    "f0_median": 712.5
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "start_s": 25.76,
+  "category": "squeak \u2192 creak",
+  "features": {
+   "duration_s": 1.59,
+   "creak_rate_hz": 174.0,
+   "squeak_pct": 50.0,
+   "n_segments": 6,
+   "n_jumps": 3,
+   "median_jump_st": 10.7,
+   "f0_median_hz": 606.0,
+   "f0_range_st": 18.0,
+   "mean_glide_st": -1.9,
+   "wobble_st": 0.58,
+   "centroid_hz": 5113.0,
+   "harmonic_count": 8.4
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.055,
+    "type": "creak",
+    "roughness": 1.523,
+    "level_db": -53.6
+   },
+   {
+    "start_s": 0.055,
+    "dur_s": 0.125,
+    "type": "squeak",
+    "roughness": 0.008,
+    "level_db": -42.6,
+    "f0_start": 1029.3,
+    "f0_end": 1105.6,
+    "f0_median": 1055.8
+   },
+   {
+    "start_s": 0.18,
+    "dur_s": 0.045,
+    "type": "squeak",
+    "roughness": 0.072,
+    "level_db": -44.1,
+    "f0_start": 2232.8,
+    "f0_end": 1132.1,
+    "f0_median": 1132.1
+   },
+   {
+    "start_s": 0.224,
+    "dur_s": 0.489,
+    "type": "squeak",
+    "roughness": 0.137,
+    "level_db": -36.0,
+    "f0_start": 611.5,
+    "f0_end": 456.5,
+    "f0_median": 572.2
+   },
+   {
+    "start_s": 0.713,
+    "dur_s": 0.07,
+    "type": "squeak",
+    "roughness": 0.214,
+    "level_db": -32.8,
+    "f0_start": 408.1,
+    "f0_end": 383.0,
+    "f0_median": 394.2
+   },
+   {
+    "start_s": 0.783,
+    "dur_s": 0.773,
+    "type": "creak",
+    "roughness": 0.659,
+    "level_db": -34.3
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "start_s": 30.32,
+  "category": "creak / ratchet",
+  "features": {
+   "duration_s": 1.95,
+   "creak_rate_hz": 83.0,
+   "squeak_pct": 18.0,
+   "n_segments": 5,
+   "n_jumps": 0,
+   "median_jump_st": 0,
+   "f0_median_hz": 263.0,
+   "f0_range_st": 18.9,
+   "mean_glide_st": 5.3,
+   "wobble_st": 0.53,
+   "centroid_hz": 2128.0,
+   "harmonic_count": 8.1
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 1.437,
+    "type": "creak",
+    "roughness": 0.809,
+    "level_db": -37.5
+   },
+   {
+    "start_s": 1.437,
+    "dur_s": 0.21,
+    "type": "squeak",
+    "roughness": 0.152,
+    "level_db": -34.1,
+    "f0_start": 217.0,
+    "f0_end": 292.3,
+    "f0_median": 243.1
+   },
+   {
+    "start_s": 1.646,
+    "dur_s": 0.095,
+    "type": "creak",
+    "roughness": 0.28,
+    "level_db": -35.2
+   },
+   {
+    "start_s": 1.741,
+    "dur_s": 0.1,
+    "type": "squeak",
+    "roughness": 0.218,
+    "level_db": -37.3,
+    "f0_start": 484.3,
+    "f0_end": 665.7,
+    "f0_median": 575.1
+   },
+   {
+    "start_s": 1.841,
+    "dur_s": 0.075,
+    "type": "creak",
+    "roughness": 0.303,
+    "level_db": -49.0
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "start_s": 34.44,
+  "category": "squeak \u2192 creak",
+  "features": {
+   "duration_s": 1.12,
+   "creak_rate_hz": 199.0,
+   "squeak_pct": 62.0,
+   "n_segments": 3,
+   "n_jumps": 0,
+   "median_jump_st": 0,
+   "f0_median_hz": 1331.0,
+   "f0_range_st": 15.1,
+   "mean_glide_st": -17.1,
+   "wobble_st": 0.86,
+   "centroid_hz": 4071.0,
+   "harmonic_count": 3.1
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.1,
+    "type": "creak",
+    "roughness": 0.303,
+    "level_db": -53.7
+   },
+   {
+    "start_s": 0.1,
+    "dur_s": 0.594,
+    "type": "squeak",
+    "roughness": 0.038,
+    "level_db": -34.2,
+    "f0_start": 1599.4,
+    "f0_end": 595.9,
+    "f0_median": 1345.4
+   },
+   {
+    "start_s": 0.693,
+    "dur_s": 0.394,
+    "type": "creak",
+    "roughness": 0.582,
+    "level_db": -36.3
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "start_s": 37.54,
+  "category": "creak / ratchet",
+  "features": {
+   "duration_s": 2.16,
+   "creak_rate_hz": 124.0,
+   "squeak_pct": 26.0,
+   "n_segments": 6,
+   "n_jumps": 0,
+   "median_jump_st": 0,
+   "f0_median_hz": 170.0,
+   "f0_range_st": 10.4,
+   "mean_glide_st": -2.3,
+   "wobble_st": 0.23,
+   "centroid_hz": 1935.0,
+   "harmonic_count": 11.4
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.619,
+    "type": "creak",
+    "roughness": 1.537,
+    "level_db": -42.7
+   },
+   {
+    "start_s": 0.619,
+    "dur_s": 0.17,
+    "type": "squeak",
+    "roughness": 0.091,
+    "level_db": -35.9,
+    "f0_start": 248.5,
+    "f0_end": 224.2,
+    "f0_median": 248.5
+   },
+   {
+    "start_s": 0.788,
+    "dur_s": 0.095,
+    "type": "creak",
+    "roughness": 0.29,
+    "level_db": -36.3
+   },
+   {
+    "start_s": 0.883,
+    "dur_s": 0.2,
+    "type": "squeak",
+    "roughness": 0.136,
+    "level_db": -34.5,
+    "f0_start": 175.3,
+    "f0_end": 149.6,
+    "f0_median": 154.7
+   },
+   {
+    "start_s": 1.083,
+    "dur_s": 0.065,
+    "type": "squeak",
+    "roughness": 0.216,
+    "level_db": -35.8,
+    "f0_start": 138.7,
+    "f0_end": 137.5,
+    "f0_median": 138.2
+   },
+   {
+    "start_s": 1.147,
+    "dur_s": 0.978,
+    "type": "creak",
+    "roughness": 0.779,
+    "level_db": -42.0
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "start_s": 41.98,
+  "category": "low groan",
+  "features": {
+   "duration_s": 0.59,
+   "creak_rate_hz": 0,
+   "squeak_pct": 97.0,
+   "n_segments": 2,
+   "n_jumps": 0,
+   "median_jump_st": 0,
+   "f0_median_hz": 428.0,
+   "f0_range_st": 12.1,
+   "mean_glide_st": 12.6,
+   "wobble_st": 0.63,
+   "centroid_hz": 1775.0,
+   "harmonic_count": 4.1
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.459,
+    "type": "squeak",
+    "roughness": 0.101,
+    "level_db": -29.8,
+    "f0_start": 318.9,
+    "f0_end": 660.4,
+    "f0_median": 427.2
+   },
+   {
+    "start_s": 0.459,
+    "dur_s": 0.095,
+    "type": "creak",
+    "roughness": 0.392,
+    "level_db": -48.5
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "start_s": 42.71,
+  "category": "stepped squeak",
+  "features": {
+   "duration_s": 1.18,
+   "creak_rate_hz": 0,
+   "squeak_pct": 87.0,
+   "n_segments": 12,
+   "n_jumps": 4,
+   "median_jump_st": 10.5,
+   "f0_median_hz": 706.0,
+   "f0_range_st": 38.3,
+   "mean_glide_st": 0.4,
+   "wobble_st": 1.47,
+   "centroid_hz": 3965.0,
+   "harmonic_count": 5.6
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.14,
+    "type": "creak",
+    "roughness": 1.103,
+    "level_db": -57.4
+   },
+   {
+    "start_s": 0.14,
+    "dur_s": 0.12,
+    "type": "squeak",
+    "roughness": 0.041,
+    "level_db": -53.8,
+    "f0_start": 1525.0,
+    "f0_end": 1578.5,
+    "f0_median": 1544.5
+   },
+   {
+    "start_s": 0.259,
+    "dur_s": 0.11,
+    "type": "squeak",
+    "roughness": 0.081,
+    "level_db": -38.6,
+    "f0_start": 1611.8,
+    "f0_end": 1581.8,
+    "f0_median": 1581.8
+   },
+   {
+    "start_s": 0.369,
+    "dur_s": 0.04,
+    "type": "squeak",
+    "roughness": 0.178,
+    "level_db": -32.5,
+    "f0_start": 776.7,
+    "f0_end": 759.7,
+    "f0_median": 768.8
+   },
+   {
+    "start_s": 0.409,
+    "dur_s": 0.105,
+    "type": "squeak",
+    "roughness": 0.154,
+    "level_db": -31.2,
+    "f0_start": 174.4,
+    "f0_end": 172.9,
+    "f0_median": 173.7
+   },
+   {
+    "start_s": 0.514,
+    "dur_s": 0.055,
+    "type": "squeak",
+    "roughness": 0.139,
+    "level_db": -32.7,
+    "f0_start": 227.9,
+    "f0_end": 226.9,
+    "f0_median": 227.4
+   },
+   {
+    "start_s": 0.569,
+    "dur_s": 0.08,
+    "type": "squeak",
+    "roughness": 0.196,
+    "level_db": -32.4,
+    "f0_start": 134.2,
+    "f0_end": 327.0,
+    "f0_median": 327.0
+   },
+   {
+    "start_s": 0.649,
+    "dur_s": 0.239,
+    "type": "squeak",
+    "roughness": 0.04,
+    "level_db": -33.5,
+    "f0_start": 652.5,
+    "f0_end": 719.1,
+    "f0_median": 702.6
+   },
+   {
+    "start_s": 0.888,
+    "dur_s": 0.06,
+    "type": "squeak",
+    "roughness": 0.215,
+    "level_db": -35.3,
+    "f0_start": 789.7,
+    "f0_end": 793.4,
+    "f0_median": 791.3
+   },
+   {
+    "start_s": 0.948,
+    "dur_s": 0.075,
+    "type": "squeak",
+    "roughness": 0.175,
+    "level_db": -37.3,
+    "f0_start": 1370.3,
+    "f0_end": 999.9,
+    "f0_median": 991.2
+   },
+   {
+    "start_s": 1.023,
+    "dur_s": 0.115,
+    "type": "squeak",
+    "roughness": 0.138,
+    "level_db": -41.6,
+    "f0_start": 1372.2,
+    "f0_end": 1405.7,
+    "f0_median": 1419.0
+   },
+   {
+    "start_s": 1.137,
+    "dur_s": 0.01,
+    "type": "creak",
+    "roughness": 0.315,
+    "level_db": -57.8
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "start_s": 46.41,
+  "category": "creak / ratchet",
+  "features": {
+   "duration_s": 2.6,
+   "creak_rate_hz": 99.0,
+   "squeak_pct": 11.0,
+   "n_segments": 2,
+   "n_jumps": 0,
+   "median_jump_st": 0,
+   "f0_median_hz": 799.0,
+   "f0_range_st": 8.4,
+   "mean_glide_st": -9.0,
+   "wobble_st": 0.57,
+   "centroid_hz": 6343.0,
+   "harmonic_count": 7.9
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.289,
+    "type": "squeak",
+    "roughness": 0.083,
+    "level_db": -34.2,
+    "f0_start": 1054.9,
+    "f0_end": 627.4,
+    "f0_median": 818.5
+   },
+   {
+    "start_s": 0.289,
+    "dur_s": 2.275,
+    "type": "creak",
+    "roughness": 0.683,
+    "level_db": -30.8
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "start_s": 50.27,
+  "category": "squeak \u2192 creak",
+  "features": {
+   "duration_s": 1.08,
+   "creak_rate_hz": 162.0,
+   "squeak_pct": 68.0,
+   "n_segments": 5,
+   "n_jumps": 0,
+   "median_jump_st": 0,
+   "f0_median_hz": 630.0,
+   "f0_range_st": 16.6,
+   "mean_glide_st": 4.0,
+   "wobble_st": 0.47,
+   "centroid_hz": 1800.0,
+   "harmonic_count": 2.9
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.115,
+    "type": "creak",
+    "roughness": 0.697,
+    "level_db": -30.9
+   },
+   {
+    "start_s": 0.115,
+    "dur_s": 0.07,
+    "type": "squeak",
+    "roughness": 0.15,
+    "level_db": -29.8,
+    "f0_start": 338.1,
+    "f0_end": 364.4,
+    "f0_median": 361.2
+   },
+   {
+    "start_s": 0.185,
+    "dur_s": 0.259,
+    "type": "squeak",
+    "roughness": 0.145,
+    "level_db": -28.8,
+    "f0_start": 309.5,
+    "f0_end": 540.6,
+    "f0_median": 403.8
+   },
+   {
+    "start_s": 0.444,
+    "dur_s": 0.379,
+    "type": "squeak",
+    "roughness": 0.042,
+    "level_db": -36.6,
+    "f0_start": 648.7,
+    "f0_end": 590.3,
+    "f0_median": 724.8
+   },
+   {
+    "start_s": 0.823,
+    "dur_s": 0.224,
+    "type": "creak",
+    "roughness": 0.681,
+    "level_db": -42.3
+   }
+  ]
+ },
+ {
+  "id": 14,
+  "start_s": 52.48,
+  "category": "squeak \u2192 creak",
+  "features": {
+   "duration_s": 0.59,
+   "creak_rate_hz": 145.0,
+   "squeak_pct": 52.0,
+   "n_segments": 2,
+   "n_jumps": 0,
+   "median_jump_st": 0,
+   "f0_median_hz": 1383.0,
+   "f0_range_st": 10.9,
+   "mean_glide_st": -12.1,
+   "wobble_st": 0.86,
+   "centroid_hz": 4569.0,
+   "harmonic_count": 3.3
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.269,
+    "type": "squeak",
+    "roughness": 0.04,
+    "level_db": -33.0,
+    "f0_start": 1705.1,
+    "f0_end": 848.6,
+    "f0_median": 1390.9
+   },
+   {
+    "start_s": 0.269,
+    "dur_s": 0.284,
+    "type": "creak",
+    "roughness": 0.58,
+    "level_db": -35.1
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "start_s": 54.21,
+  "category": "creak / ratchet",
+  "features": {
+   "duration_s": 0.65,
+   "creak_rate_hz": 156.0,
+   "squeak_pct": 4.0,
+   "n_segments": 2,
+   "n_jumps": 0,
+   "median_jump_st": 0,
+   "f0_median_hz": 512.0,
+   "f0_range_st": 0,
+   "mean_glide_st": 0,
+   "wobble_st": 0,
+   "centroid_hz": 4750.0,
+   "harmonic_count": 9.3
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.175,
+    "type": "creak",
+    "roughness": 0.394,
+    "level_db": -36.4
+   },
+   {
+    "start_s": 0.175,
+    "dur_s": 0.439,
+    "type": "creak",
+    "roughness": 0.519,
+    "level_db": -36.0,
+    "f0_start": 512.4,
+    "f0_end": 512.4,
+    "f0_median": 512.4
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "start_s": 55.68,
+  "category": "squeak \u2192 creak",
+  "features": {
+   "duration_s": 1.6,
+   "creak_rate_hz": 49.0,
+   "squeak_pct": 56.0,
+   "n_segments": 7,
+   "n_jumps": 2,
+   "median_jump_st": 11.9,
+   "f0_median_hz": 788.0,
+   "f0_range_st": 27.2,
+   "mean_glide_st": 7.6,
+   "wobble_st": 0.85,
+   "centroid_hz": 3004.0,
+   "harmonic_count": 3.8
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.045,
+    "type": "creak",
+    "roughness": 1.0,
+    "level_db": -51.3
+   },
+   {
+    "start_s": 0.045,
+    "dur_s": 0.04,
+    "type": "squeak",
+    "roughness": 0.14,
+    "level_db": -27.4,
+    "f0_start": 329.1,
+    "f0_end": 341.1,
+    "f0_median": 332.6
+   },
+   {
+    "start_s": 0.085,
+    "dur_s": 0.274,
+    "type": "squeak",
+    "roughness": 0.099,
+    "level_db": -28.2,
+    "f0_start": 419.1,
+    "f0_end": 544.4,
+    "f0_median": 419.2
+   },
+   {
+    "start_s": 0.359,
+    "dur_s": 0.17,
+    "type": "creak",
+    "roughness": 0.431,
+    "level_db": -40.1
+   },
+   {
+    "start_s": 0.529,
+    "dur_s": 0.11,
+    "type": "squeak",
+    "roughness": 0.079,
+    "level_db": -46.8,
+    "f0_start": 1093.1,
+    "f0_end": 1215.7,
+    "f0_median": 1100.3
+   },
+   {
+    "start_s": 0.639,
+    "dur_s": 0.384,
+    "type": "squeak",
+    "roughness": 0.019,
+    "level_db": -40.2,
+    "f0_start": 612.4,
+    "f0_end": 1591.9,
+    "f0_median": 1593.2
+   },
+   {
+    "start_s": 1.023,
+    "dur_s": 0.544,
+    "type": "creak",
+    "roughness": 0.746,
+    "level_db": -38.4,
+    "f0_start": 788.6,
+    "f0_end": 787.8,
+    "f0_median": 788.6
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "start_s": 58.32,
+  "category": "creak / ratchet",
+  "features": {
+   "duration_s": 1.38,
+   "creak_rate_hz": 140.0,
+   "squeak_pct": 22.0,
+   "n_segments": 6,
+   "n_jumps": 0,
+   "median_jump_st": 0,
+   "f0_median_hz": 640.0,
+   "f0_range_st": 14.8,
+   "mean_glide_st": -0.6,
+   "wobble_st": 0.08,
+   "centroid_hz": 4328.0,
+   "harmonic_count": 6.8
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.13,
+    "type": "creak",
+    "roughness": 0.503,
+    "level_db": -33.5
+   },
+   {
+    "start_s": 0.13,
+    "dur_s": 0.16,
+    "type": "squeak",
+    "roughness": 0.057,
+    "level_db": -30.4,
+    "f0_start": 649.2,
+    "f0_end": 628.1,
+    "f0_median": 650.2
+   },
+   {
+    "start_s": 0.289,
+    "dur_s": 0.075,
+    "type": "squeak",
+    "roughness": 0.127,
+    "level_db": -28.0,
+    "f0_start": 447.7,
+    "f0_end": 444.2,
+    "f0_median": 444.7
+   },
+   {
+    "start_s": 0.364,
+    "dur_s": 0.125,
+    "type": "creak",
+    "roughness": 0.473,
+    "level_db": -30.4
+   },
+   {
+    "start_s": 0.489,
+    "dur_s": 0.04,
+    "type": "squeak",
+    "roughness": 0.235,
+    "level_db": -30.5,
+    "f0_start": 277.9,
+    "f0_end": 279.8,
+    "f0_median": 279.3
+   },
+   {
+    "start_s": 0.529,
+    "dur_s": 0.818,
+    "type": "creak",
+    "roughness": 0.658,
+    "level_db": -35.4
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "start_s": 62.17,
+  "category": "squeak \u2192 creak",
+  "features": {
+   "duration_s": 2.72,
+   "creak_rate_hz": 38.0,
+   "squeak_pct": 73.0,
+   "n_segments": 12,
+   "n_jumps": 6,
+   "median_jump_st": 11.8,
+   "f0_median_hz": 1330.0,
+   "f0_range_st": 50.4,
+   "mean_glide_st": 4.2,
+   "wobble_st": 1.73,
+   "centroid_hz": 4086.0,
+   "harmonic_count": 3.1
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.883,
+    "type": "creak",
+    "roughness": 0.816,
+    "level_db": -43.8
+   },
+   {
+    "start_s": 0.883,
+    "dur_s": 0.07,
+    "type": "creak",
+    "roughness": 0.298,
+    "level_db": -44.0,
+    "f0_start": 126.7,
+    "f0_end": 126.7,
+    "f0_median": 126.7
+   },
+   {
+    "start_s": 0.953,
+    "dur_s": 0.409,
+    "type": "creak",
+    "roughness": 0.755,
+    "level_db": -45.4,
+    "f0_start": 120.2,
+    "f0_end": 123.9,
+    "f0_median": 122.0
+   },
+   {
+    "start_s": 1.362,
+    "dur_s": 0.075,
+    "type": "squeak",
+    "roughness": 0.019,
+    "level_db": -41.7,
+    "f0_start": 1734.6,
+    "f0_end": 1869.3,
+    "f0_median": 1807.8
+   },
+   {
+    "start_s": 1.437,
+    "dur_s": 0.09,
+    "type": "squeak",
+    "roughness": 0.009,
+    "level_db": -27.5,
+    "f0_start": 2349.0,
+    "f0_end": 2261.9,
+    "f0_median": 2329.1
+   },
+   {
+    "start_s": 1.527,
+    "dur_s": 0.274,
+    "type": "squeak",
+    "roughness": 0.022,
+    "level_db": -27.5,
+    "f0_start": 467.2,
+    "f0_end": 1341.7,
+    "f0_median": 1387.1
+   },
+   {
+    "start_s": 1.801,
+    "dur_s": 0.07,
+    "type": "squeak",
+    "roughness": 0.103,
+    "level_db": -27.0,
+    "f0_start": 1064.0,
+    "f0_end": 985.4,
+    "f0_median": 1009.1
+   },
+   {
+    "start_s": 1.871,
+    "dur_s": 0.04,
+    "type": "squeak",
+    "roughness": 0.137,
+    "level_db": -28.8,
+    "f0_start": 1926.5,
+    "f0_end": 1908.7,
+    "f0_median": 1920.6
+   },
+   {
+    "start_s": 1.911,
+    "dur_s": 0.294,
+    "type": "squeak",
+    "roughness": 0.012,
+    "level_db": -28.5,
+    "f0_start": 950.1,
+    "f0_end": 716.9,
+    "f0_median": 705.5
+   },
+   {
+    "start_s": 2.205,
+    "dur_s": 0.08,
+    "type": "squeak",
+    "roughness": 0.099,
+    "level_db": -51.1,
+    "f0_start": 237.6,
+    "f0_end": 710.8,
+    "f0_median": 710.2
+   },
+   {
+    "start_s": 2.285,
+    "dur_s": 0.04,
+    "type": "squeak",
+    "roughness": 0.112,
+    "level_db": -52.8,
+    "f0_start": 708.5,
+    "f0_end": 709.6,
+    "f0_median": 709.0
+   },
+   {
+    "start_s": 2.325,
+    "dur_s": 0.359,
+    "type": "creak",
+    "roughness": 1.163,
+    "level_db": -53.1
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "start_s": 65.43,
+  "category": "creak / ratchet",
+  "features": {
+   "duration_s": 0.94,
+   "creak_rate_hz": 30.0,
+   "squeak_pct": 5.0,
+   "n_segments": 3,
+   "n_jumps": 0,
+   "median_jump_st": 0,
+   "f0_median_hz": 1138.0,
+   "f0_range_st": 1.2,
+   "mean_glide_st": 0,
+   "wobble_st": 0,
+   "centroid_hz": 2076.0,
+   "harmonic_count": 1.8
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.389,
+    "type": "creak",
+    "roughness": 1.222,
+    "level_db": -41.2
+   },
+   {
+    "start_s": 0.389,
+    "dur_s": 0.504,
+    "type": "creak",
+    "roughness": 0.628,
+    "level_db": -49.2,
+    "f0_start": 1179.4,
+    "f0_end": 1111.5,
+    "f0_median": 1138.1
+   },
+   {
+    "start_s": 0.893,
+    "dur_s": 0.015,
+    "type": "creak",
+    "roughness": 0.252,
+    "level_db": -55.4
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "start_s": 66.54,
+  "category": "squeak \u2192 creak",
+  "features": {
+   "duration_s": 1.33,
+   "creak_rate_hz": 111.0,
+   "squeak_pct": 61.0,
+   "n_segments": 5,
+   "n_jumps": 2,
+   "median_jump_st": 11.8,
+   "f0_median_hz": 1351.0,
+   "f0_range_st": 13.7,
+   "mean_glide_st": 3.6,
+   "wobble_st": 2.44,
+   "centroid_hz": 4288.0,
+   "harmonic_count": 3.2
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.389,
+    "type": "squeak",
+    "roughness": 0.025,
+    "level_db": -29.7,
+    "f0_start": 1356.3,
+    "f0_end": 1333.1,
+    "f0_median": 1376.2
+   },
+   {
+    "start_s": 0.389,
+    "dur_s": 0.075,
+    "type": "squeak",
+    "roughness": 0.042,
+    "level_db": -26.9,
+    "f0_start": 666.3,
+    "f0_end": 963.8,
+    "f0_median": 968.6
+   },
+   {
+    "start_s": 0.464,
+    "dur_s": 0.08,
+    "type": "squeak",
+    "roughness": 0.165,
+    "level_db": -27.7,
+    "f0_start": 1905.9,
+    "f0_end": 890.5,
+    "f0_median": 940.5
+   },
+   {
+    "start_s": 0.544,
+    "dur_s": 0.205,
+    "type": "squeak",
+    "roughness": 0.047,
+    "level_db": -27.8,
+    "f0_start": 404.4,
+    "f0_end": 622.3,
+    "f0_median": 683.1
+   },
+   {
+    "start_s": 0.748,
+    "dur_s": 0.549,
+    "type": "creak",
+    "roughness": 0.683,
+    "level_db": -33.7
+   }
+  ]
+ },
+ {
+  "id": 21,
+  "start_s": 72.39,
+  "category": "gliding squeak",
+  "features": {
+   "duration_s": 1.3,
+   "creak_rate_hz": 0,
+   "squeak_pct": 87.0,
+   "n_segments": 6,
+   "n_jumps": 2,
+   "median_jump_st": 26.0,
+   "f0_median_hz": 1363.0,
+   "f0_range_st": 13.5,
+   "mean_glide_st": 14.8,
+   "wobble_st": 2.25,
+   "centroid_hz": 4483.0,
+   "harmonic_count": 3.3
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.21,
+    "type": "creak",
+    "roughness": 1.214,
+    "level_db": -41.0
+   },
+   {
+    "start_s": 0.21,
+    "dur_s": 0.195,
+    "type": "squeak",
+    "roughness": 0.012,
+    "level_db": -42.1,
+    "f0_start": 1481.0,
+    "f0_end": 1648.6,
+    "f0_median": 1533.2
+   },
+   {
+    "start_s": 0.404,
+    "dur_s": 0.085,
+    "type": "creak",
+    "roughness": 0.458,
+    "level_db": -41.0
+   },
+   {
+    "start_s": 0.489,
+    "dur_s": 0.085,
+    "type": "squeak",
+    "roughness": 0.015,
+    "level_db": -28.9,
+    "f0_start": 2470.0,
+    "f0_end": 2282.4,
+    "f0_median": 2351.0
+   },
+   {
+    "start_s": 0.574,
+    "dur_s": 0.244,
+    "type": "squeak",
+    "roughness": 0.027,
+    "level_db": -27.8,
+    "f0_start": 466.0,
+    "f0_end": 1340.3,
+    "f0_median": 1359.7
+   },
+   {
+    "start_s": 0.818,
+    "dur_s": 0.449,
+    "type": "squeak",
+    "roughness": 0.018,
+    "level_db": -30.2,
+    "f0_start": 134.1,
+    "f0_end": 1399.8,
+    "f0_median": 1327.9
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "start_s": 76.32,
+  "category": "stepped squeak",
+  "features": {
+   "duration_s": 1.49,
+   "creak_rate_hz": 54.0,
+   "squeak_pct": 99.0,
+   "n_segments": 6,
+   "n_jumps": 3,
+   "median_jump_st": 7.8,
+   "f0_median_hz": 1413.0,
+   "f0_range_st": 30.7,
+   "mean_glide_st": 0.3,
+   "wobble_st": 0.32,
+   "centroid_hz": 4845.0,
+   "harmonic_count": 3.4
+  },
+  "segments": [
+   {
+    "start_s": 0.0,
+    "dur_s": 0.289,
+    "type": "squeak",
+    "roughness": 0.068,
+    "level_db": -41.2,
+    "f0_start": 400.3,
+    "f0_end": 397.1,
+    "f0_median": 400.2
+   },
+   {
+    "start_s": 0.289,
+    "dur_s": 0.16,
+    "type": "creak",
+    "roughness": 0.529,
+    "level_db": -48.6
+   },
+   {
+    "start_s": 0.449,
+    "dur_s": 0.13,
+    "type": "squeak",
+    "roughness": 0.019,
+    "level_db": -38.4,
+    "f0_start": 1545.7,
+    "f0_end": 1868.3,
+    "f0_median": 1664.1
+   },
+   {
+    "start_s": 0.579,
+    "dur_s": 0.045,
+    "type": "squeak",
+    "roughness": 0.076,
+    "level_db": -41.9,
+    "f0_start": 1050.6,
+    "f0_end": 2204.7,
+    "f0_median": 2183.6
+   },
+   {
+    "start_s": 0.624,
+    "dur_s": 0.13,
+    "type": "squeak",
+    "roughness": 0.022,
+    "level_db": -26.3,
+    "f0_start": 2495.3,
+    "f0_end": 2246.3,
+    "f0_median": 2339.0
+   },
+   {
+    "start_s": 0.753,
+    "dur_s": 0.703,
+    "type": "squeak",
+    "roughness": 0.009,
+    "level_db": -28.6,
+    "f0_start": 1414.9,
+    "f0_end": 1415.6,
+    "f0_median": 1412.8
+   }
+  ]
+ }
+]

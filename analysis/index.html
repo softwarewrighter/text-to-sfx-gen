@@ -1,0 +1,202 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Squeak analysis</title>
+<style>body{font-family:system-ui,sans-serif;max-width:1180px;margin:24px auto;padding:0 16px;color:#222}
+table{border-collapse:collapse;font-size:13px}td,th{border:1px solid #ccc;padding:3px 7px;text-align:right}
+th{background:#f3f3f3}td.l{text-align:left}.chip{display:inline-block;padding:1px 8px;border-radius:9px;color:#fff;font-size:12px}
+.ev{border-top:1px solid #ddd;margin-top:28px;padding-top:8px}audio{height:32px;vertical-align:middle}
+img{max-width:100%}code{background:#f3f3f3;padding:1px 4px}</style></head><body><p><a href='../index.html'>← Back to the demo</a></p>
+<h1>Squeak analysis</h1><p>Source: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ'>https://www.youtube.com/watch?v=TspuiaFX2YQ</a> — 23 events
+(peak &gt; -32 dBFS, longer than 0.4 s).</p><p><b>Reference audio is not included.</b> Its provenance is unclear, so this page shows only analysis of it (spectrograms, pitch tracks, measurements). Each event links to its moment in the source. Every player on this page plays our own resynthesis, rebuilt from the measured pitch contour, slip-pulse timing and average spectral envelope.</p>
+<h2>Categories</h2><ul>
+<li><span class='chip' style='background:#d62728'>stepped squeak</span> Several steady pitch plateaus with abrupt jumps between them (mode hopping) — <a href='#ev1'>#1</a>, <a href='#ev2'>#2</a>, <a href='#ev5'>#5</a>, <a href='#ev11'>#11</a>, <a href='#ev22'>#22</a></li>
+<li><span class='chip' style='background:#1f77b4'>gliding squeak</span> Mostly one continuous pitched glide, few or no jumps — <a href='#ev4'>#4</a>, <a href='#ev21'>#21</a></li>
+<li><span class='chip' style='background:#9467bd'>squeak → creak</span> Pitched squeak that breaks up into irregular stick-slip pulses — <a href='#ev0'>#0</a>, <a href='#ev3'>#3</a>, <a href='#ev6'>#6</a>, <a href='#ev8'>#8</a>, <a href='#ev13'>#13</a>, <a href='#ev14'>#14</a>, <a href='#ev16'>#16</a>, <a href='#ev18'>#18</a>, <a href='#ev20'>#20</a></li>
+<li><span class='chip' style='background:#8c564b'>creak / ratchet</span> Mostly aperiodic: separate slip pulses, heard as a creak or ratchet — <a href='#ev7'>#7</a>, <a href='#ev9'>#9</a>, <a href='#ev12'>#12</a>, <a href='#ev15'>#15</a>, <a href='#ev17'>#17</a>, <a href='#ev19'>#19</a></li>
+<li><span class='chip' style='background:#2ca02c'>low groan</span> Pitched but low (under ~600 Hz), often wobbly — <a href='#ev10'>#10</a></li>
+</ul><h2>How they differ</h2><img src='overview.png'>
+<h2>Features</h2><table><tr><th>#</th><th>category</th><th>duration_s</th><th>creak_rate_hz</th><th>squeak_pct</th><th>n_segments</th><th>n_jumps</th><th>median_jump_st</th><th>f0_median_hz</th><th>f0_range_st</th><th>mean_glide_st</th><th>wobble_st</th><th>centroid_hz</th><th>harmonic_count</th></tr>
+<tr><td><a href='#ev0'>0</a></td><td class='l'><span class='chip' style='background:#9467bd'>squeak → creak</span></td><td>4.56</td><td>146.0</td><td>69.0</td><td>22</td><td>3</td><td>20.7</td><td>361.0</td><td>32.0</td><td>5.6</td><td>1.59</td><td>4466.0</td><td>12.4</td></tr>
+<tr><td><a href='#ev1'>1</a></td><td class='l'><span class='chip' style='background:#d62728'>stepped squeak</span></td><td>1.62</td><td>0</td><td>95.0</td><td>7</td><td>4</td><td>8.3</td><td>706.0</td><td>21.6</td><td>1.7</td><td>1.28</td><td>3826.0</td><td>5.4</td></tr>
+<tr><td><a href='#ev2'>2</a></td><td class='l'><span class='chip' style='background:#d62728'>stepped squeak</span></td><td>1.11</td><td>0</td><td>100.0</td><td>4</td><td>3</td><td>2.6</td><td>1383.0</td><td>10.6</td><td>1.5</td><td>0.22</td><td>3974.0</td><td>2.9</td></tr>
+<tr><td><a href='#ev3'>3</a></td><td class='l'><span class='chip' style='background:#9467bd'>squeak → creak</span></td><td>0.77</td><td>0</td><td>55.0</td><td>7</td><td>5</td><td>5.9</td><td>962.0</td><td>18.8</td><td>2.1</td><td>2.23</td><td>6498.0</td><td>6.8</td></tr>
+<tr><td><a href='#ev4'>4</a></td><td class='l'><span class='chip' style='background:#1f77b4'>gliding squeak</span></td><td>2.2</td><td>73.0</td><td>82.0</td><td>8</td><td>2</td><td>23.3</td><td>625.0</td><td>34.5</td><td>-4.6</td><td>0.7</td><td>3273.0</td><td>5.2</td></tr>
+<tr><td><a href='#ev5'>5</a></td><td class='l'><span class='chip' style='background:#d62728'>stepped squeak</span></td><td>1.6</td><td>0</td><td>90.0</td><td>8</td><td>4</td><td>15.5</td><td>1401.0</td><td>10.8</td><td>8.5</td><td>3.17</td><td>4272.0</td><td>3.0</td></tr>
+<tr><td><a href='#ev6'>6</a></td><td class='l'><span class='chip' style='background:#9467bd'>squeak → creak</span></td><td>1.59</td><td>174.0</td><td>50.0</td><td>6</td><td>3</td><td>10.7</td><td>606.0</td><td>18.0</td><td>-1.9</td><td>0.58</td><td>5113.0</td><td>8.4</td></tr>
+<tr><td><a href='#ev7'>7</a></td><td class='l'><span class='chip' style='background:#8c564b'>creak / ratchet</span></td><td>1.95</td><td>83.0</td><td>18.0</td><td>5</td><td>0</td><td>0</td><td>263.0</td><td>18.9</td><td>5.3</td><td>0.53</td><td>2128.0</td><td>8.1</td></tr>
+<tr><td><a href='#ev8'>8</a></td><td class='l'><span class='chip' style='background:#9467bd'>squeak → creak</span></td><td>1.12</td><td>199.0</td><td>62.0</td><td>3</td><td>0</td><td>0</td><td>1331.0</td><td>15.1</td><td>-17.1</td><td>0.86</td><td>4071.0</td><td>3.1</td></tr>
+<tr><td><a href='#ev9'>9</a></td><td class='l'><span class='chip' style='background:#8c564b'>creak / ratchet</span></td><td>2.16</td><td>124.0</td><td>26.0</td><td>6</td><td>0</td><td>0</td><td>170.0</td><td>10.4</td><td>-2.3</td><td>0.23</td><td>1935.0</td><td>11.4</td></tr>
+<tr><td><a href='#ev10'>10</a></td><td class='l'><span class='chip' style='background:#2ca02c'>low groan</span></td><td>0.59</td><td>0</td><td>97.0</td><td>2</td><td>0</td><td>0</td><td>428.0</td><td>12.1</td><td>12.6</td><td>0.63</td><td>1775.0</td><td>4.1</td></tr>
+<tr><td><a href='#ev11'>11</a></td><td class='l'><span class='chip' style='background:#d62728'>stepped squeak</span></td><td>1.18</td><td>0</td><td>87.0</td><td>12</td><td>4</td><td>10.5</td><td>706.0</td><td>38.3</td><td>0.4</td><td>1.47</td><td>3965.0</td><td>5.6</td></tr>
+<tr><td><a href='#ev12'>12</a></td><td class='l'><span class='chip' style='background:#8c564b'>creak / ratchet</span></td><td>2.6</td><td>99.0</td><td>11.0</td><td>2</td><td>0</td><td>0</td><td>799.0</td><td>8.4</td><td>-9.0</td><td>0.57</td><td>6343.0</td><td>7.9</td></tr>
+<tr><td><a href='#ev13'>13</a></td><td class='l'><span class='chip' style='background:#9467bd'>squeak → creak</span></td><td>1.08</td><td>162.0</td><td>68.0</td><td>5</td><td>0</td><td>0</td><td>630.0</td><td>16.6</td><td>4.0</td><td>0.47</td><td>1800.0</td><td>2.9</td></tr>
+<tr><td><a href='#ev14'>14</a></td><td class='l'><span class='chip' style='background:#9467bd'>squeak → creak</span></td><td>0.59</td><td>145.0</td><td>52.0</td><td>2</td><td>0</td><td>0</td><td>1383.0</td><td>10.9</td><td>-12.1</td><td>0.86</td><td>4569.0</td><td>3.3</td></tr>
+<tr><td><a href='#ev15'>15</a></td><td class='l'><span class='chip' style='background:#8c564b'>creak / ratchet</span></td><td>0.65</td><td>156.0</td><td>4.0</td><td>2</td><td>0</td><td>0</td><td>512.0</td><td>0</td><td>0</td><td>0</td><td>4750.0</td><td>9.3</td></tr>
+<tr><td><a href='#ev16'>16</a></td><td class='l'><span class='chip' style='background:#9467bd'>squeak → creak</span></td><td>1.6</td><td>49.0</td><td>56.0</td><td>7</td><td>2</td><td>11.9</td><td>788.0</td><td>27.2</td><td>7.6</td><td>0.85</td><td>3004.0</td><td>3.8</td></tr>
+<tr><td><a href='#ev17'>17</a></td><td class='l'><span class='chip' style='background:#8c564b'>creak / ratchet</span></td><td>1.38</td><td>140.0</td><td>22.0</td><td>6</td><td>0</td><td>0</td><td>640.0</td><td>14.8</td><td>-0.6</td><td>0.08</td><td>4328.0</td><td>6.8</td></tr>
+<tr><td><a href='#ev18'>18</a></td><td class='l'><span class='chip' style='background:#9467bd'>squeak → creak</span></td><td>2.72</td><td>38.0</td><td>73.0</td><td>12</td><td>6</td><td>11.8</td><td>1330.0</td><td>50.4</td><td>4.2</td><td>1.73</td><td>4086.0</td><td>3.1</td></tr>
+<tr><td><a href='#ev19'>19</a></td><td class='l'><span class='chip' style='background:#8c564b'>creak / ratchet</span></td><td>0.94</td><td>30.0</td><td>5.0</td><td>3</td><td>0</td><td>0</td><td>1138.0</td><td>1.2</td><td>0</td><td>0</td><td>2076.0</td><td>1.8</td></tr>
+<tr><td><a href='#ev20'>20</a></td><td class='l'><span class='chip' style='background:#9467bd'>squeak → creak</span></td><td>1.33</td><td>111.0</td><td>61.0</td><td>5</td><td>2</td><td>11.8</td><td>1351.0</td><td>13.7</td><td>3.6</td><td>2.44</td><td>4288.0</td><td>3.2</td></tr>
+<tr><td><a href='#ev21'>21</a></td><td class='l'><span class='chip' style='background:#1f77b4'>gliding squeak</span></td><td>1.3</td><td>0</td><td>87.0</td><td>6</td><td>2</td><td>26.0</td><td>1363.0</td><td>13.5</td><td>14.8</td><td>2.25</td><td>4483.0</td><td>3.3</td></tr>
+<tr><td><a href='#ev22'>22</a></td><td class='l'><span class='chip' style='background:#d62728'>stepped squeak</span></td><td>1.49</td><td>54.0</td><td>99.0</td><td>6</td><td>3</td><td>7.8</td><td>1413.0</td><td>30.7</td><td>0.3</td><td>0.32</td><td>4845.0</td><td>3.4</td></tr>
+</table><p>squeak_pct = share of loud frames that are periodic. harmonic_count = spectral centroid / median pitch (higher = brighter). wobble_st = pitch jitter within segments. glide = pitch change within a segment (positive = rising).</p>
+<div class='ev' id='ev0'><h3>#0 at 0.96 s
+<span class='chip' style='background:#9467bd'>squeak → creak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=0s'>listen in the source at 1 s</a> &nbsp; resynthesis <audio controls src='ev0_resynth.wav'></audio></p>
+<img src='ev0.png'>
+<details><summary>22 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.349</td><td class='l'>creak</td><td></td><td></td><td>0.737</td><td>-46.0</td></tr><tr><td>0.349</td><td>0.195</td><td class='l'>squeak</td><td>1541.3</td><td>1635.2</td><td>0.009</td><td>-30.0</td></tr><tr><td>0.544</td><td>0.175</td><td class='l'>squeak</td><td>1363.5</td><td>1060.5</td><td>0.144</td><td>-22.6</td></tr><tr><td>0.718</td><td>0.105</td><td class='l'>squeak</td><td>408.6</td><td>665.9</td><td>0.116</td><td>-22.5</td></tr><tr><td>0.823</td><td>0.06</td><td class='l'>creak</td><td></td><td></td><td>0.425</td><td>-24.3</td></tr><tr><td>0.883</td><td>1.152</td><td class='l'>creak</td><td>446.6</td><td>444.4</td><td>0.603</td><td>-32.4</td></tr><tr><td>2.035</td><td>0.135</td><td class='l'>squeak</td><td>362.3</td><td>380.3</td><td>0.063</td><td>-44.4</td></tr><tr><td>2.17</td><td>0.04</td><td class='l'>creak</td><td></td><td></td><td>0.475</td><td>-46.6</td></tr><tr><td>2.21</td><td>0.125</td><td class='l'>squeak</td><td>301.5</td><td>328.4</td><td>0.116</td><td>-48.6</td></tr><tr><td>2.335</td><td>0.06</td><td class='l'>squeak</td><td>409.1</td><td>436.1</td><td>0.226</td><td>-47.3</td></tr><tr><td>2.395</td><td>0.085</td><td class='l'>creak</td><td></td><td></td><td>0.288</td><td>-47.1</td></tr><tr><td>2.479</td><td>0.294</td><td class='l'>squeak</td><td>759.5</td><td>1134.6</td><td>0.06</td><td>-27.7</td></tr><tr><td>2.774</td><td>0.055</td><td class='l'>squeak</td><td>560.4</td><td>538.3</td><td>0.127</td><td>-22.5</td></tr><tr><td>2.829</td><td>0.095</td><td class='l'>squeak</td><td>162.2</td><td>946.5</td><td>0.119</td><td>-24.7</td></tr><tr><td>2.923</td><td>0.145</td><td class='l'>squeak</td><td>236.2</td><td>635.9</td><td>0.072</td><td>-23.1</td></tr><tr><td>3.068</td><td>0.05</td><td class='l'>creak</td><td></td><td></td><td>0.394</td><td>-25.1</td></tr><tr><td>3.118</td><td>0.055</td><td class='l'>squeak</td><td>449.7</td><td>427.1</td><td>0.214</td><td>-23.6</td></tr><tr><td>3.173</td><td>0.05</td><td class='l'>creak</td><td></td><td></td><td>0.325</td><td>-25.4</td></tr><tr><td>3.223</td><td>0.524</td><td class='l'>squeak</td><td>377.2</td><td>317.8</td><td>0.055</td><td>-27.9</td></tr><tr><td>3.746</td><td>0.584</td><td class='l'>squeak</td><td>288.4</td><td>289.2</td><td>0.067</td><td>-34.4</td></tr><tr><td>4.33</td><td>0.045</td><td class='l'>creak</td><td></td><td></td><td>0.289</td><td>-36.1</td></tr><tr><td>4.375</td><td>0.15</td><td class='l'>squeak</td><td>331.5</td><td>380.7</td><td>0.131</td><td>-44.8</td></tr></table></details></div>
+<div class='ev' id='ev1'><h3>#1 at 9.35 s
+<span class='chip' style='background:#d62728'>stepped squeak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=9s'>listen in the source at 9 s</a> &nbsp; resynthesis <audio controls src='ev1_resynth.wav'></audio></p>
+<img src='ev1.png'>
+<details><summary>7 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.264</td><td class='l'>squeak</td><td>1511.1</td><td>1632.7</td><td>0.003</td><td>-28.9</td></tr><tr><td>0.264</td><td>0.334</td><td class='l'>squeak</td><td>1413.7</td><td>1050.8</td><td>0.09</td><td>-23.4</td></tr><tr><td>0.599</td><td>0.065</td><td class='l'>squeak</td><td>1919.5</td><td>936.1</td><td>0.065</td><td>-24.8</td></tr><tr><td>0.663</td><td>0.354</td><td class='l'>squeak</td><td>310.2</td><td>551.3</td><td>0.035</td><td>-27.3</td></tr><tr><td>1.018</td><td>0.254</td><td class='l'>squeak</td><td>469.3</td><td>474.5</td><td>0.023</td><td>-29.7</td></tr><tr><td>1.272</td><td>0.18</td><td class='l'>squeak</td><td>602.6</td><td>679.8</td><td>0.067</td><td>-39.0</td></tr><tr><td>1.452</td><td>0.135</td><td class='l'>creak</td><td></td><td></td><td>0.909</td><td>-56.3</td></tr></table></details></div>
+<div class='ev' id='ev2'><h3>#2 at 13.62 s
+<span class='chip' style='background:#d62728'>stepped squeak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=13s'>listen in the source at 14 s</a> &nbsp; resynthesis <audio controls src='ev2_resynth.wav'></audio></p>
+<img src='ev2.png'>
+<details><summary>4 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.22</td><td class='l'>squeak</td><td>1510.6</td><td>1667.9</td><td>0.007</td><td>-31.3</td></tr><tr><td>0.22</td><td>0.394</td><td class='l'>squeak</td><td>1431.2</td><td>1347.5</td><td>0.024</td><td>-28.1</td></tr><tr><td>0.614</td><td>0.444</td><td class='l'>squeak</td><td>1130.4</td><td>1412.4</td><td>0.059</td><td>-29.2</td></tr><tr><td>1.058</td><td>0.02</td><td class='l'>squeak</td><td>466.1</td><td>465.9</td><td>0.205</td><td>-56.8</td></tr></table></details></div>
+<div class='ev' id='ev3'><h3>#3 at 16.26 s
+<span class='chip' style='background:#9467bd'>squeak → creak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=16s'>listen in the source at 16 s</a> &nbsp; resynthesis <audio controls src='ev3_resynth.wav'></audio></p>
+<img src='ev3.png'>
+<details><summary>7 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.324</td><td class='l'>creak</td><td></td><td></td><td>1.903</td><td>-40.2</td></tr><tr><td>0.324</td><td>0.06</td><td class='l'>squeak</td><td>1005.9</td><td>1409.4</td><td>0.102</td><td>-25.8</td></tr><tr><td>0.384</td><td>0.125</td><td class='l'>squeak</td><td>484.6</td><td>774.2</td><td>0.101</td><td>-29.2</td></tr><tr><td>0.509</td><td>0.055</td><td class='l'>squeak</td><td>962.5</td><td>1154.8</td><td>0.152</td><td>-40.1</td></tr><tr><td>0.564</td><td>0.11</td><td class='l'>squeak</td><td>1439.8</td><td>1147.1</td><td>0.113</td><td>-41.6</td></tr><tr><td>0.673</td><td>0.05</td><td class='l'>squeak</td><td>817.2</td><td>817.0</td><td>0.182</td><td>-53.9</td></tr><tr><td>0.723</td><td>0.015</td><td class='l'>squeak</td><td></td><td></td><td>0.215</td><td>-59.5</td></tr></table></details></div>
+<div class='ev' id='ev4'><h3>#4 at 18.25 s
+<span class='chip' style='background:#1f77b4'>gliding squeak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=18s'>listen in the source at 18 s</a> &nbsp; resynthesis <audio controls src='ev4_resynth.wav'></audio></p>
+<img src='ev4.png'>
+<details><summary>8 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.678</td><td class='l'>squeak</td><td>955.3</td><td>479.3</td><td>0.095</td><td>-34.9</td></tr><tr><td>0.678</td><td>0.045</td><td class='l'>creak</td><td></td><td></td><td>0.328</td><td>-38.8</td></tr><tr><td>0.723</td><td>0.125</td><td class='l'>squeak</td><td>429.3</td><td>411.1</td><td>0.182</td><td>-37.7</td></tr><tr><td>0.848</td><td>0.04</td><td class='l'>squeak</td><td>137.3</td><td>136.7</td><td>0.232</td><td>-39.2</td></tr><tr><td>0.888</td><td>0.21</td><td class='l'>creak</td><td></td><td></td><td>0.331</td><td>-41.7</td></tr><tr><td>1.098</td><td>0.125</td><td class='l'>squeak</td><td>126.2</td><td>130.4</td><td>0.214</td><td>-43.3</td></tr><tr><td>1.222</td><td>0.788</td><td class='l'>squeak</td><td>644.3</td><td>453.2</td><td>0.026</td><td>-44.6</td></tr><tr><td>2.01</td><td>0.155</td><td class='l'>creak</td><td></td><td></td><td>0.594</td><td>-46.1</td></tr></table></details></div>
+<div class='ev' id='ev5'><h3>#5 at 23.22 s
+<span class='chip' style='background:#d62728'>stepped squeak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=23s'>listen in the source at 23 s</a> &nbsp; resynthesis <audio controls src='ev5_resynth.wav'></audio></p>
+<img src='ev5.png'>
+<details><summary>8 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.065</td><td class='l'>squeak</td><td>1534.2</td><td>1443.0</td><td>0.054</td><td>-44.4</td></tr><tr><td>0.065</td><td>0.294</td><td class='l'>creak</td><td></td><td></td><td>1.6</td><td>-43.4</td></tr><tr><td>0.359</td><td>0.055</td><td class='l'>creak</td><td>1492.3</td><td>1490.5</td><td>0.296</td><td>-48.9</td></tr><tr><td>0.414</td><td>0.234</td><td class='l'>squeak</td><td>1549.5</td><td>1767.8</td><td>0.006</td><td>-36.0</td></tr><tr><td>0.649</td><td>0.055</td><td class='l'>squeak</td><td>590.5</td><td>2304.4</td><td>0.048</td><td>-25.9</td></tr><tr><td>0.703</td><td>0.434</td><td class='l'>squeak</td><td>1134.5</td><td>1354.8</td><td>0.022</td><td>-26.2</td></tr><tr><td>1.137</td><td>0.404</td><td class='l'>squeak</td><td>448.3</td><td>1423.6</td><td>0.03</td><td>-30.1</td></tr><tr><td>1.541</td><td>0.025</td><td class='l'>squeak</td><td>712.5</td><td>712.5</td><td>0.2</td><td>-56.5</td></tr></table></details></div>
+<div class='ev' id='ev6'><h3>#6 at 25.76 s
+<span class='chip' style='background:#9467bd'>squeak → creak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=25s'>listen in the source at 26 s</a> &nbsp; resynthesis <audio controls src='ev6_resynth.wav'></audio></p>
+<img src='ev6.png'>
+<details><summary>6 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.055</td><td class='l'>creak</td><td></td><td></td><td>1.523</td><td>-53.6</td></tr><tr><td>0.055</td><td>0.125</td><td class='l'>squeak</td><td>1029.3</td><td>1105.6</td><td>0.008</td><td>-42.6</td></tr><tr><td>0.18</td><td>0.045</td><td class='l'>squeak</td><td>2232.8</td><td>1132.1</td><td>0.072</td><td>-44.1</td></tr><tr><td>0.224</td><td>0.489</td><td class='l'>squeak</td><td>611.5</td><td>456.5</td><td>0.137</td><td>-36.0</td></tr><tr><td>0.713</td><td>0.07</td><td class='l'>squeak</td><td>408.1</td><td>383.0</td><td>0.214</td><td>-32.8</td></tr><tr><td>0.783</td><td>0.773</td><td class='l'>creak</td><td></td><td></td><td>0.659</td><td>-34.3</td></tr></table></details></div>
+<div class='ev' id='ev7'><h3>#7 at 30.32 s
+<span class='chip' style='background:#8c564b'>creak / ratchet</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=30s'>listen in the source at 30 s</a> &nbsp; resynthesis <audio controls src='ev7_resynth.wav'></audio></p>
+<img src='ev7.png'>
+<details><summary>5 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>1.437</td><td class='l'>creak</td><td></td><td></td><td>0.809</td><td>-37.5</td></tr><tr><td>1.437</td><td>0.21</td><td class='l'>squeak</td><td>217.0</td><td>292.3</td><td>0.152</td><td>-34.1</td></tr><tr><td>1.646</td><td>0.095</td><td class='l'>creak</td><td></td><td></td><td>0.28</td><td>-35.2</td></tr><tr><td>1.741</td><td>0.1</td><td class='l'>squeak</td><td>484.3</td><td>665.7</td><td>0.218</td><td>-37.3</td></tr><tr><td>1.841</td><td>0.075</td><td class='l'>creak</td><td></td><td></td><td>0.303</td><td>-49.0</td></tr></table></details></div>
+<div class='ev' id='ev8'><h3>#8 at 34.44 s
+<span class='chip' style='background:#9467bd'>squeak → creak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=34s'>listen in the source at 34 s</a> &nbsp; resynthesis <audio controls src='ev8_resynth.wav'></audio></p>
+<img src='ev8.png'>
+<details><summary>3 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.1</td><td class='l'>creak</td><td></td><td></td><td>0.303</td><td>-53.7</td></tr><tr><td>0.1</td><td>0.594</td><td class='l'>squeak</td><td>1599.4</td><td>595.9</td><td>0.038</td><td>-34.2</td></tr><tr><td>0.693</td><td>0.394</td><td class='l'>creak</td><td></td><td></td><td>0.582</td><td>-36.3</td></tr></table></details></div>
+<div class='ev' id='ev9'><h3>#9 at 37.54 s
+<span class='chip' style='background:#8c564b'>creak / ratchet</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=37s'>listen in the source at 38 s</a> &nbsp; resynthesis <audio controls src='ev9_resynth.wav'></audio></p>
+<img src='ev9.png'>
+<details><summary>6 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.619</td><td class='l'>creak</td><td></td><td></td><td>1.537</td><td>-42.7</td></tr><tr><td>0.619</td><td>0.17</td><td class='l'>squeak</td><td>248.5</td><td>224.2</td><td>0.091</td><td>-35.9</td></tr><tr><td>0.788</td><td>0.095</td><td class='l'>creak</td><td></td><td></td><td>0.29</td><td>-36.3</td></tr><tr><td>0.883</td><td>0.2</td><td class='l'>squeak</td><td>175.3</td><td>149.6</td><td>0.136</td><td>-34.5</td></tr><tr><td>1.083</td><td>0.065</td><td class='l'>squeak</td><td>138.7</td><td>137.5</td><td>0.216</td><td>-35.8</td></tr><tr><td>1.147</td><td>0.978</td><td class='l'>creak</td><td></td><td></td><td>0.779</td><td>-42.0</td></tr></table></details></div>
+<div class='ev' id='ev10'><h3>#10 at 41.98 s
+<span class='chip' style='background:#2ca02c'>low groan</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=41s'>listen in the source at 42 s</a> &nbsp; resynthesis <audio controls src='ev10_resynth.wav'></audio></p>
+<img src='ev10.png'>
+<details><summary>2 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.459</td><td class='l'>squeak</td><td>318.9</td><td>660.4</td><td>0.101</td><td>-29.8</td></tr><tr><td>0.459</td><td>0.095</td><td class='l'>creak</td><td></td><td></td><td>0.392</td><td>-48.5</td></tr></table></details></div>
+<div class='ev' id='ev11'><h3>#11 at 42.71 s
+<span class='chip' style='background:#d62728'>stepped squeak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=42s'>listen in the source at 43 s</a> &nbsp; resynthesis <audio controls src='ev11_resynth.wav'></audio></p>
+<img src='ev11.png'>
+<details><summary>12 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.14</td><td class='l'>creak</td><td></td><td></td><td>1.103</td><td>-57.4</td></tr><tr><td>0.14</td><td>0.12</td><td class='l'>squeak</td><td>1525.0</td><td>1578.5</td><td>0.041</td><td>-53.8</td></tr><tr><td>0.259</td><td>0.11</td><td class='l'>squeak</td><td>1611.8</td><td>1581.8</td><td>0.081</td><td>-38.6</td></tr><tr><td>0.369</td><td>0.04</td><td class='l'>squeak</td><td>776.7</td><td>759.7</td><td>0.178</td><td>-32.5</td></tr><tr><td>0.409</td><td>0.105</td><td class='l'>squeak</td><td>174.4</td><td>172.9</td><td>0.154</td><td>-31.2</td></tr><tr><td>0.514</td><td>0.055</td><td class='l'>squeak</td><td>227.9</td><td>226.9</td><td>0.139</td><td>-32.7</td></tr><tr><td>0.569</td><td>0.08</td><td class='l'>squeak</td><td>134.2</td><td>327.0</td><td>0.196</td><td>-32.4</td></tr><tr><td>0.649</td><td>0.239</td><td class='l'>squeak</td><td>652.5</td><td>719.1</td><td>0.04</td><td>-33.5</td></tr><tr><td>0.888</td><td>0.06</td><td class='l'>squeak</td><td>789.7</td><td>793.4</td><td>0.215</td><td>-35.3</td></tr><tr><td>0.948</td><td>0.075</td><td class='l'>squeak</td><td>1370.3</td><td>999.9</td><td>0.175</td><td>-37.3</td></tr><tr><td>1.023</td><td>0.115</td><td class='l'>squeak</td><td>1372.2</td><td>1405.7</td><td>0.138</td><td>-41.6</td></tr><tr><td>1.137</td><td>0.01</td><td class='l'>creak</td><td></td><td></td><td>0.315</td><td>-57.8</td></tr></table></details></div>
+<div class='ev' id='ev12'><h3>#12 at 46.41 s
+<span class='chip' style='background:#8c564b'>creak / ratchet</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=46s'>listen in the source at 46 s</a> &nbsp; resynthesis <audio controls src='ev12_resynth.wav'></audio></p>
+<img src='ev12.png'>
+<details><summary>2 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.289</td><td class='l'>squeak</td><td>1054.9</td><td>627.4</td><td>0.083</td><td>-34.2</td></tr><tr><td>0.289</td><td>2.275</td><td class='l'>creak</td><td></td><td></td><td>0.683</td><td>-30.8</td></tr></table></details></div>
+<div class='ev' id='ev13'><h3>#13 at 50.27 s
+<span class='chip' style='background:#9467bd'>squeak → creak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=50s'>listen in the source at 50 s</a> &nbsp; resynthesis <audio controls src='ev13_resynth.wav'></audio></p>
+<img src='ev13.png'>
+<details><summary>5 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.115</td><td class='l'>creak</td><td></td><td></td><td>0.697</td><td>-30.9</td></tr><tr><td>0.115</td><td>0.07</td><td class='l'>squeak</td><td>338.1</td><td>364.4</td><td>0.15</td><td>-29.8</td></tr><tr><td>0.185</td><td>0.259</td><td class='l'>squeak</td><td>309.5</td><td>540.6</td><td>0.145</td><td>-28.8</td></tr><tr><td>0.444</td><td>0.379</td><td class='l'>squeak</td><td>648.7</td><td>590.3</td><td>0.042</td><td>-36.6</td></tr><tr><td>0.823</td><td>0.224</td><td class='l'>creak</td><td></td><td></td><td>0.681</td><td>-42.3</td></tr></table></details></div>
+<div class='ev' id='ev14'><h3>#14 at 52.48 s
+<span class='chip' style='background:#9467bd'>squeak → creak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=52s'>listen in the source at 52 s</a> &nbsp; resynthesis <audio controls src='ev14_resynth.wav'></audio></p>
+<img src='ev14.png'>
+<details><summary>2 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.269</td><td class='l'>squeak</td><td>1705.1</td><td>848.6</td><td>0.04</td><td>-33.0</td></tr><tr><td>0.269</td><td>0.284</td><td class='l'>creak</td><td></td><td></td><td>0.58</td><td>-35.1</td></tr></table></details></div>
+<div class='ev' id='ev15'><h3>#15 at 54.21 s
+<span class='chip' style='background:#8c564b'>creak / ratchet</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=54s'>listen in the source at 54 s</a> &nbsp; resynthesis <audio controls src='ev15_resynth.wav'></audio></p>
+<img src='ev15.png'>
+<details><summary>2 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.175</td><td class='l'>creak</td><td></td><td></td><td>0.394</td><td>-36.4</td></tr><tr><td>0.175</td><td>0.439</td><td class='l'>creak</td><td>512.4</td><td>512.4</td><td>0.519</td><td>-36.0</td></tr></table></details></div>
+<div class='ev' id='ev16'><h3>#16 at 55.68 s
+<span class='chip' style='background:#9467bd'>squeak → creak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=55s'>listen in the source at 56 s</a> &nbsp; resynthesis <audio controls src='ev16_resynth.wav'></audio></p>
+<img src='ev16.png'>
+<details><summary>7 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.045</td><td class='l'>creak</td><td></td><td></td><td>1.0</td><td>-51.3</td></tr><tr><td>0.045</td><td>0.04</td><td class='l'>squeak</td><td>329.1</td><td>341.1</td><td>0.14</td><td>-27.4</td></tr><tr><td>0.085</td><td>0.274</td><td class='l'>squeak</td><td>419.1</td><td>544.4</td><td>0.099</td><td>-28.2</td></tr><tr><td>0.359</td><td>0.17</td><td class='l'>creak</td><td></td><td></td><td>0.431</td><td>-40.1</td></tr><tr><td>0.529</td><td>0.11</td><td class='l'>squeak</td><td>1093.1</td><td>1215.7</td><td>0.079</td><td>-46.8</td></tr><tr><td>0.639</td><td>0.384</td><td class='l'>squeak</td><td>612.4</td><td>1591.9</td><td>0.019</td><td>-40.2</td></tr><tr><td>1.023</td><td>0.544</td><td class='l'>creak</td><td>788.6</td><td>787.8</td><td>0.746</td><td>-38.4</td></tr></table></details></div>
+<div class='ev' id='ev17'><h3>#17 at 58.32 s
+<span class='chip' style='background:#8c564b'>creak / ratchet</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=58s'>listen in the source at 58 s</a> &nbsp; resynthesis <audio controls src='ev17_resynth.wav'></audio></p>
+<img src='ev17.png'>
+<details><summary>6 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.13</td><td class='l'>creak</td><td></td><td></td><td>0.503</td><td>-33.5</td></tr><tr><td>0.13</td><td>0.16</td><td class='l'>squeak</td><td>649.2</td><td>628.1</td><td>0.057</td><td>-30.4</td></tr><tr><td>0.289</td><td>0.075</td><td class='l'>squeak</td><td>447.7</td><td>444.2</td><td>0.127</td><td>-28.0</td></tr><tr><td>0.364</td><td>0.125</td><td class='l'>creak</td><td></td><td></td><td>0.473</td><td>-30.4</td></tr><tr><td>0.489</td><td>0.04</td><td class='l'>squeak</td><td>277.9</td><td>279.8</td><td>0.235</td><td>-30.5</td></tr><tr><td>0.529</td><td>0.818</td><td class='l'>creak</td><td></td><td></td><td>0.658</td><td>-35.4</td></tr></table></details></div>
+<div class='ev' id='ev18'><h3>#18 at 62.17 s
+<span class='chip' style='background:#9467bd'>squeak → creak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=62s'>listen in the source at 62 s</a> &nbsp; resynthesis <audio controls src='ev18_resynth.wav'></audio></p>
+<img src='ev18.png'>
+<details><summary>12 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.883</td><td class='l'>creak</td><td></td><td></td><td>0.816</td><td>-43.8</td></tr><tr><td>0.883</td><td>0.07</td><td class='l'>creak</td><td>126.7</td><td>126.7</td><td>0.298</td><td>-44.0</td></tr><tr><td>0.953</td><td>0.409</td><td class='l'>creak</td><td>120.2</td><td>123.9</td><td>0.755</td><td>-45.4</td></tr><tr><td>1.362</td><td>0.075</td><td class='l'>squeak</td><td>1734.6</td><td>1869.3</td><td>0.019</td><td>-41.7</td></tr><tr><td>1.437</td><td>0.09</td><td class='l'>squeak</td><td>2349.0</td><td>2261.9</td><td>0.009</td><td>-27.5</td></tr><tr><td>1.527</td><td>0.274</td><td class='l'>squeak</td><td>467.2</td><td>1341.7</td><td>0.022</td><td>-27.5</td></tr><tr><td>1.801</td><td>0.07</td><td class='l'>squeak</td><td>1064.0</td><td>985.4</td><td>0.103</td><td>-27.0</td></tr><tr><td>1.871</td><td>0.04</td><td class='l'>squeak</td><td>1926.5</td><td>1908.7</td><td>0.137</td><td>-28.8</td></tr><tr><td>1.911</td><td>0.294</td><td class='l'>squeak</td><td>950.1</td><td>716.9</td><td>0.012</td><td>-28.5</td></tr><tr><td>2.205</td><td>0.08</td><td class='l'>squeak</td><td>237.6</td><td>710.8</td><td>0.099</td><td>-51.1</td></tr><tr><td>2.285</td><td>0.04</td><td class='l'>squeak</td><td>708.5</td><td>709.6</td><td>0.112</td><td>-52.8</td></tr><tr><td>2.325</td><td>0.359</td><td class='l'>creak</td><td></td><td></td><td>1.163</td><td>-53.1</td></tr></table></details></div>
+<div class='ev' id='ev19'><h3>#19 at 65.43 s
+<span class='chip' style='background:#8c564b'>creak / ratchet</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=65s'>listen in the source at 65 s</a> &nbsp; resynthesis <audio controls src='ev19_resynth.wav'></audio></p>
+<img src='ev19.png'>
+<details><summary>3 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.389</td><td class='l'>creak</td><td></td><td></td><td>1.222</td><td>-41.2</td></tr><tr><td>0.389</td><td>0.504</td><td class='l'>creak</td><td>1179.4</td><td>1111.5</td><td>0.628</td><td>-49.2</td></tr><tr><td>0.893</td><td>0.015</td><td class='l'>creak</td><td></td><td></td><td>0.252</td><td>-55.4</td></tr></table></details></div>
+<div class='ev' id='ev20'><h3>#20 at 66.54 s
+<span class='chip' style='background:#9467bd'>squeak → creak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=66s'>listen in the source at 67 s</a> &nbsp; resynthesis <audio controls src='ev20_resynth.wav'></audio></p>
+<img src='ev20.png'>
+<details><summary>5 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.389</td><td class='l'>squeak</td><td>1356.3</td><td>1333.1</td><td>0.025</td><td>-29.7</td></tr><tr><td>0.389</td><td>0.075</td><td class='l'>squeak</td><td>666.3</td><td>963.8</td><td>0.042</td><td>-26.9</td></tr><tr><td>0.464</td><td>0.08</td><td class='l'>squeak</td><td>1905.9</td><td>890.5</td><td>0.165</td><td>-27.7</td></tr><tr><td>0.544</td><td>0.205</td><td class='l'>squeak</td><td>404.4</td><td>622.3</td><td>0.047</td><td>-27.8</td></tr><tr><td>0.748</td><td>0.549</td><td class='l'>creak</td><td></td><td></td><td>0.683</td><td>-33.7</td></tr></table></details></div>
+<div class='ev' id='ev21'><h3>#21 at 72.39 s
+<span class='chip' style='background:#1f77b4'>gliding squeak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=72s'>listen in the source at 72 s</a> &nbsp; resynthesis <audio controls src='ev21_resynth.wav'></audio></p>
+<img src='ev21.png'>
+<details><summary>6 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.21</td><td class='l'>creak</td><td></td><td></td><td>1.214</td><td>-41.0</td></tr><tr><td>0.21</td><td>0.195</td><td class='l'>squeak</td><td>1481.0</td><td>1648.6</td><td>0.012</td><td>-42.1</td></tr><tr><td>0.404</td><td>0.085</td><td class='l'>creak</td><td></td><td></td><td>0.458</td><td>-41.0</td></tr><tr><td>0.489</td><td>0.085</td><td class='l'>squeak</td><td>2470.0</td><td>2282.4</td><td>0.015</td><td>-28.9</td></tr><tr><td>0.574</td><td>0.244</td><td class='l'>squeak</td><td>466.0</td><td>1340.3</td><td>0.027</td><td>-27.8</td></tr><tr><td>0.818</td><td>0.449</td><td class='l'>squeak</td><td>134.1</td><td>1399.8</td><td>0.018</td><td>-30.2</td></tr></table></details></div>
+<div class='ev' id='ev22'><h3>#22 at 76.32 s
+<span class='chip' style='background:#d62728'>stepped squeak</span></h3>
+<p>reference: <a href='https://www.youtube.com/watch?v=TspuiaFX2YQ&amp;t=76s'>listen in the source at 76 s</a> &nbsp; resynthesis <audio controls src='ev22_resynth.wav'></audio></p>
+<img src='ev22.png'>
+<details><summary>6 segments</summary><table>
+<tr><th>start s</th><th>dur s</th><th>type</th><th>f0 start</th><th>f0 end</th><th>roughness</th><th>level dB</th></tr>
+<tr><td>0.0</td><td>0.289</td><td class='l'>squeak</td><td>400.3</td><td>397.1</td><td>0.068</td><td>-41.2</td></tr><tr><td>0.289</td><td>0.16</td><td class='l'>creak</td><td></td><td></td><td>0.529</td><td>-48.6</td></tr><tr><td>0.449</td><td>0.13</td><td class='l'>squeak</td><td>1545.7</td><td>1868.3</td><td>0.019</td><td>-38.4</td></tr><tr><td>0.579</td><td>0.045</td><td class='l'>squeak</td><td>1050.6</td><td>2204.7</td><td>0.076</td><td>-41.9</td></tr><tr><td>0.624</td><td>0.13</td><td class='l'>squeak</td><td>2495.3</td><td>2246.3</td><td>0.022</td><td>-26.3</td></tr><tr><td>0.753</td><td>0.703</td><td class='l'>squeak</td><td>1414.9</td><td>1415.6</td><td>0.009</td><td>-28.6</td></tr></table></details></div>
+</body></html>
